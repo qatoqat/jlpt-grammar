@@ -1,0 +1,297 @@
+:root {
+    --bg-body: #F9F9F7;
+    --bg-card: #FFFFFF;
+    --text-main: #2C3E50;
+    --text-muted: #7F8C8D;
+    --line-color: #E0E0E0;
+    
+    /* Level Colors */
+    --n5-color: #27AE60;
+    --n4-color: #2980B9;
+    --n3-color: #8E44AD;
+    --n2-color: #D35400;
+    --n1-color: #C0392B;
+
+    /* Decay Color (Yellow) */
+    --decay-color: #F1C40F;
+
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 100px; /* Extra space for footer */
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+    background: #fff;
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+    text-align: center;
+    border-bottom: 1px solid var(--line-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-main);
+}
+
+.level-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.pill {
+    background: #eee;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.pill:hover { background: #e0e0e0; }
+
+.pill.active {
+    color: white;
+    transform: scale(1.05);
+}
+
+.progress-counter {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    height: 20px; /* Keep layout stable */
+    transition: opacity 0.3s ease;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 1000px;
+    margin: var(--spacing-lg) auto 0;
+    padding: 0 var(--spacing-md);
+    position: relative;
+}
+
+.tree-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--line-color);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.level-content { display: none; animation: fadeIn 0.25s ease-out; }
+.level-content.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Branches --- */
+.branch-section {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.branch-header {
+    background: var(--bg-card);
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    border: 1px solid var(--line-color);
+    color: var(--text-muted);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* --- Card Design --- */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow);
+    border-top: 3px solid #ddd; /* Fallback */
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+/* Checked State */
+.card.checked {
+    background-color: #fffbf0; /* Slight yellow tint background */
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Card Checkbox --- */
+.card-checkbox {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: white;
+    z-index: 10;
+}
+
+.card-checkbox:hover {
+    border-color: var(--text-muted);
+}
+
+.card-checkbox::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+
+.card.checked .card-checkbox {
+    background-color: var(--n5-color); /* Will be overridden by JS logic */
+    border-color: transparent;
+}
+
+.card.checked .card-checkbox::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- Card Typography --- */
+.grammar-point {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: block;
+    padding-right: 30px; /* Space for checkbox */
+}
+
+.jp-char {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-main);
+}
+
+.meaning {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.example {
+    background: #F4F6F8;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-left: 3px solid #ddd;
+}
+
+.example span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    margin-top: 3px;
+}
+
+/* --- References Link --- */
+.references {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #eee;
+    font-size: 0.75rem;
+}
+
+.ref-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.ref-link:hover {
+    color: var(--n5-color); /* Changes dynamically via JS */
+    text-decoration: underline;
+}
+
+.ref-link::before {
+    content: '🔗';
+    font-size: 0.8rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .tree-line { left: 20px; }
+    .branch-header { left: 20px; transform: none; margin-left: var(--spacing-sm); }
+    .cards-grid { grid-template-columns: 1fr; }
+    .level-pills { gap: 8px; }
+    .pill { padding: 6px 14px; font-size: 0.85rem; }
+}
