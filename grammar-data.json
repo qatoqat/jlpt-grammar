@@ -1,0 +1,361 @@
+{
+    "n5": {
+        "color": "#27AE60",
+        "sections": [
+            {
+                "title": "Particles — Multiple Uses",
+                "cards": [
+                    { "id": "n5-wa-topic", "point": "Topic Marker", "jp": "は (wa)", "meaning": "Marks the topic; “as for…”", "example": "わたしは学生です。<span>I am a student.</span>", "refs": ["n5-wa-contrast"] },
+                    { "id": "n5-wa-contrast", "point": "Contrast Marker", "jp": "は (wa)", "meaning": "Implies contrast with other options.", "example": "肉は食べますが、魚は食べません。<span>I eat meat, but I don’t eat fish.</span>", "refs": ["n5-wa-topic"] },
+                    { "id": "n5-ga-subject", "point": "Subject Marker", "jp": "が (ga)", "meaning": "Marks the subject (focus/emphasis).", "example": "これが本です。<span>This is the book (the one that is).</span>", "refs": ["n5-ga-but"] },
+                    { "id": "n5-ga-but", "point": "But / However", "jp": "が (ga)", "meaning": "Connects clauses with contrast (formal).", "example": "すみませんが、行けません。<span>Sorry, but I can’t go.</span>", "refs": ["n5-ga-subject"] },
+                    { "id": "n5-o-obj", "point": "Object Marker", "jp": "を (o)", "meaning": "Marks the object of an action.", "example": "ご飯を食べる。<span>Eat a meal.</span>" },
+                    { "id": "n5-ni-dir", "point": "Direction / Destination", "jp": "に (ni)", "meaning": "To; towards (destination).", "example": "日本に行く。<span>Go to Japan.</span>", "refs": ["n5-ni-time", "n5-ni-exist"] },
+                    { "id": "n5-ni-time", "point": "Time (specific)", "jp": "に (ni)", "meaning": "At a specific time.", "example": "7時に起きる。<span>Wake up at 7.</span>", "refs": ["n5-ni-dir"] },
+                    { "id": "n5-ni-exist", "point": "Existence (animate)", "jp": "に (ni) + いる", "meaning": "Indicates location of animate existence.", "example": "庭に猫がいる。<span>There is a cat in the garden.</span>", "refs": ["n5-ga-aru"] },
+                    { "id": "n5-ni-indirect", "point": "Indirect Object (Receiver)", "jp": "に (ni)", "meaning": "Marks the recipient in giving/teaching verbs.", "example": "友達に本をあげる。<span>Give a book to a friend.</span>", "refs": ["n5-ni-dir"] },
+                    { "id": "n5-ni-purpose", "point": "Purpose (go to do)", "jp": "に (ni)", "meaning": "Go/come for the purpose of.", "example": "本を買いに行く。<span>Go to buy a book.</span>", "refs": ["n5-ni-dir"] },
+                    { "id": "n5-de-place", "point": "Place of Action", "jp": "で (de)", "meaning": "Where an action takes place (at/in).", "example": "図書館で勉強する。<span>Study at the library.</span>", "refs": ["n5-de-means", "n5-de-cause"] },
+                    { "id": "n5-de-means", "point": "Means / Method", "jp": "で (de)", "meaning": "By means of; with; using.", "example": "日本語で書く。<span>Write in Japanese.</span>", "refs": ["n5-de-place"] },
+                    { "id": "n5-de-total", "point": "Total Amount / Time Limit", "jp": "で (de)", "meaning": "In (total amount/time); within.", "example": "全部で1000円です。<span>It’s 1000 yen in total.</span>", "refs": ["n5-de-cause"] },
+                    { "id": "n5-de-cause", "point": "Reason / Cause", "jp": "で (de)", "meaning": "Because of (cause/reason).", "example": "病気で休む。<span>Rest because of illness.</span>", "refs": ["n5-node"] },
+                    { "id": "n5-no-possessive", "point": "Possessive / Modifier", "jp": "の (no)", "meaning": "'s; connects nouns.", "example": "私の本。<span>My book.</span>", "refs": ["n5-no-nominalizer"] },
+                    { "id": "n5-no-nominalizer", "point": "Verb Nominalizer", "jp": "の (no)", "meaning": "Turns a clause/verb into a noun.", "example": "走るのが好き。<span>I like running.</span>", "refs": ["n5-no-possessive"] },
+                    { "id": "n5-ka-question", "point": "Question Particle", "jp": "か (ka)", "meaning": "Makes a sentence a question.", "example": "行きますか。<span>Will you go?</span>", "refs": ["n5-ka-or"] },
+                    { "id": "n5-ka-or", "point": "Or (Choice)", "jp": "か (ka)", "meaning": "Or; indicates a choice or uncertainty.", "example": "コーヒーか紅茶。<span>Coffee or tea.</span>", "refs": ["n5-ka-question"] },
+                    { "id": "n5-kara-from", "point": "From (Origin)", "jp": "から (kara)", "meaning": "Starting point/origin.", "example": "日本から来た。<span>Came from Japan.</span>", "refs": ["n5-kara-because"] },
+                    { "id": "n5-kara-because", "point": "Because (Reason)", "jp": "から (kara)", "meaning": "Because, since (casual).", "example": "寒いから行かない。<span>I won’t go because it’s cold.</span>", "refs": ["n5-kara-from", "n5-node"] },
+                    { "id": "n5-made-until", "point": "Until / To (Extent)", "jp": "まで (made)", "meaning": "Up to (time/place); as far as.", "example": "5時まで待つ。<span>Wait until 5.</span>", "refs": ["n4-made-ni"] },
+                    { "id": "n5-e-direction", "point": "Direction (towards)", "jp": "へ (e)", "meaning": "Towards (directional emphasis).", "example": "学校へ行く。<span>Go towards school.</span>", "refs": ["n5-ni-dir"] },
+                    { "id": "n5-to-and", "point": "And / With", "jp": "と (to)", "meaning": "And (listing nouns); with.", "example": "友達と行く。<span>Go with a friend.</span>" },
+                    { "id": "n5-mo-also", "point": "Also / Too", "jp": "も (mo)", "meaning": "Also; too; as well.", "example": "私も行く。<span>I’m going too.</span>" },
+                    { "id": "n5-ya", "point": "And (partial list)", "jp": "や (ya)", "meaning": "And; non-exhaustive list.", "example": "リンゴやミカン。<span>Apples, oranges, etc.</span>" },
+                    { "id": "n5-yo-ne", "point": "Sentence Enders", "jp": "よ / ね (yo / ne)", "meaning": "Emphasis / Agreement.", "example": "いい天気ですね。<span>It's nice weather, isn't it?</span>" }
+                ]
+            },
+            {
+                "title": "Copula & Basic Sentences",
+                "cards": [
+                    { "id": "n5-desu", "point": "To be (polite)", "jp": "です (desu)", "meaning": "Is/are/am (polite copula).", "example": "学生です。<span>I am a student.</span>" },
+                    { "id": "n5-da", "point": "To be (casual)", "jp": "だ (da)", "meaning": "Is/are/am (plain copula).", "example": "雨だ。<span>It’s raining.</span>" },
+                    { "id": "n5-ja-nai", "point": "Is not (polite)", "jp": "じゃない / ではない (ja nai / de wa nai)", "meaning": "Is not (negative of です/だ).", "example": "学生ではない。<span>Not a student.</span>" },
+                    { "id": "n5-deshou", "point": "Probably / I think", "jp": "でしょう (deshou)", "meaning": "Probably; I think (polite guess).", "example">雨でしょう。<span>It will probably rain.</span>" }
+                ]
+            },
+            {
+                "title": "Verbs (Basic Forms)",
+                "cards": [
+                    { "id": "n5-masu", "point": "Polite Present/Future", "jp": "～ます (masu)", "meaning": "Will do / do (polite non-past).", "example": "行きます。<span>Will go.</span>" },
+                    { "id": "n5-mashita", "point": "Polite Past", "jp": "～ました (mashita)", "meaning": "Did (polite past).", "example": "行きました。<span>Went.</span>" },
+                    { "id": "n5-masen", "point": "Polite Negative", "jp": "～ません (masen)", "meaning": "Will not do / do not (polite).", "example": "行きません。<span>Won’t go.</span>" },
+                    { "id": "n5-nai", "point": "Plain Negative", "jp": "～ない (nai)", "meaning": "Do not (plain negative).", "example": "行かない。<span>Won't go.</span>" },
+                    { "id": "n5-nakatta", "point": "Plain Past Negative", "jp": "～なかった (nakatta)", "meaning": "Did not (plain past negative).", "example": "行かなかった。<span>Didn't go.</span>" },
+                    { "id": "n5-te", "point": "Te-form (connect/do)", "jp": "～て (te)", "meaning": "Connects actions; basis for requests.", "example": "本を読んで、寝る。<span>Read a book and sleep.</span>" },
+                    { "id": "n5-te-kudasai", "point": "Request (Please do)", "jp": "～てください (te kudasai)", "meaning": "Please do …", "example": "座ってください。<span>Please sit down.</span>" },
+                    { "id": "n5-te-mo-ii", "point": "Permission (May)", "jp": "～てもいい (te mo ii)", "meaning": "It is okay to do…", "example": "入ってもいい。<span>You may enter.</span>" },
+                    { "id": "n5-te-wa-ikenai", "point": "Must not", "jp": "～てはいけない (te wa ikenai)", "meaning": "Must not do …", "example": "ここに入ってはいけない。<span>Must not enter here.</span>" },
+                    { "id": "n5-te-iru", "point": "Progressive / State", "jp": "～ている (te iru)", "meaning": "Doing now; resulting state.", "example": "今食べている。<span>Eating now.</span>" },
+                    { "id": "n5-te-aru", "point": "State (Inanimate)", "jp": "～てある (te aru)", "meaning": "State of being (done for a purpose).", "example": "窓が開けてある。<span>The window is left open (on purpose).</span>" },
+                    { "id": "n5-te-oku", "point": "Do in advance", "jp": "～ておく (te oku)", "meaning": "Do something for later.", "example": "予約しておく。<span>Make a reservation in advance.</span>" },
+                    { "id": "n5-te-miru", "point": "Try doing", "jp": "～てみる (te miru)", "meaning": "Try doing and see.", "example": "日本の映画を見てみる。<span>Try watching a Japanese movie.</span>" },
+                    { "id": "n5-te-kara", "point": "After doing", "jp": "～てから (te kara)", "meaning": "After doing X.", "example": "ご飯を食べてから行く。<span>Go after eating.</span>" },
+                    { "id": "n5-naide-kudasai", "point": "Please don’t", "jp": "～ないでください (naide kudasai)", "meaning": "Please don’t do …", "example": "入らないでください。<span>Please don’t enter.</span>" },
+                    { "id": "n5-tai", "point": "Want to do", "jp": "～たい (tai)", "meaning": "Want to do …", "example": "行きたい。<span>Want to go.</span>" },
+                    { "id": "n5-ta-koto-ga-aru", "point": "Have done before", "jp": "～たことがある (ta koto ga aru)", "meaning": "Have done (experience).", "example": "日本に行ったことがある。<span>Have been to Japan.</span>" },
+                    { "id": "n5-tsumori-da", "point": "Plan / Intend to", "jp": "～つもりだ (tsumori da)", "meaning": "Plan to; intend to.", "example": "行くつもりだ。<span>Plan to go.</span>" }
+                ]
+            },
+            {
+                "title": "Adjectives",
+                "cards": [
+                    { "id": "n5-i-adj", "point": "i-adj present", "jp": "～い (i)", "meaning": "Is [adj].", "example": "大きい。<span>Big.</span>" },
+                    { "id": "n5-i-adj-neg", "point": "i-adj negative", "jp": "～くない (kunai)", "meaning": "Is not [adj].", "example": "大きくない。<span>Not big.</span>" },
+                    { "id": "n5-i-adj-past", "point": "i-adj past", "jp": "～かった (katta)", "meaning": "Was [adj].", "example": "大きかった。<span>Was big.</span>" },
+                    { "id": "n5-i-adj-past-neg", "point": "i-adj past negative", "jp": "～くなかった (kunakatta)", "meaning": "Was not [adj].", "example": "大きくなかった。<span>Was not big.</span>" },
+                    { "id": "n5-na-adj", "point": "na-adj present", "jp": "～な / だ (na / da)", "meaning": "Is [adj] (na-adj).", "example": "静かだ。<span>Quiet.</span>" },
+                    { "id": "n5-na-adj-neg", "point": "na-adj negative", "jp": "～じゃない (ja nai)", "meaning": "Is not [na-adj].", "example": "静かじゃない。<span>Not quiet.</span>" }
+                ]
+            },
+            {
+                "title": "Connectors & Others",
+                "cards": [
+                    { "id": "n5-node", "point": "Because (softer)", "jp": "～ので (node)", "meaning": "Because, since (polite).", "example": "寒いので行かない。<span>Since it’s cold, I won’t go.</span>", "refs": ["n5-kara-because"] },
+                    { "id": "n5-kedo", "point": "But / However", "jp": "～けど / けれど (kedo / keredo)", "meaning": "But, however (casual).", "example": "安いけど、古い。<span>It’s cheap but old.</span>", "refs": ["n5-ga-but"] },
+                    { "id": "n5-yori", "point": "Comparison", "jp": "～より～のほうが (yori ~ no hou ga)", "meaning": "More X than Y.", "example": "歩くよりバスのほうが速い。<span>The bus is faster than walking.</span>" },
+                    { "id": "n5-ga-aru", "point": "Existence (inanimate)", "jp": "～がある (ga aru)", "meaning": "There is (a thing).", "example": "庭に木がある。<span>There is a tree in the yard.</span>", "refs": ["n5-ni-exist"] },
+                    { "id": "n5-ni-iku", "point": "Go / Come for Purpose", "jp": "～にいく / にくる (ni iku / ni kuru)", "meaning": "Go/come to do (verb).", "example": "服を買いに行く。<span>Go to buy clothes.</span>" },
+                    { "id": "n5-ni-suru", "point": "Decide on", "jp": "～にする (ni suru)", "meaning": "Decide to choose/make.", "example": "これにする。<span>I'll choose this one.</span>" },
+                    { "id": "n5-no-ga-suki", "point": "Likes doing", "jp": "～のが好き (no ga suki)", "meaning": "Like doing something.", "example": "音楽を聞くのが好き。<span>I like listening to music.</span>" }
+                ]
+            }
+        ]
+    },
+    "n4": {
+        "color": "#2980B9",
+        "sections": [
+            {
+                "title": "Conditionals & Time",
+                "cards": [
+                    { "id": "n4-ba", "point": "If (conditional)", "jp": "～ば (ba)", "meaning": "If … then ….", "example": "行けば、会える。<span>If you go, you can meet.</span>" },
+                    { "id": "n4-tara", "point": "When / If (after)", "jp": "～たら (tara)", "meaning": "When/if it happens ….", "example": "家に着いたら連絡する。<span>When I get home, I’ll contact you.</span>" },
+                    { "id": "n4-baai-wa", "point": "In the case that", "jp": "～場合は (baai wa)", "meaning": "In the event/ case that ….", "example": "雨の場合は中止だ。<span>In case of rain, it’s cancelled.</span>" },
+                    { "id": "n4-nara", "point": "If, in case", "jp": "～なら (nara)", "meaning": "If (topic/conditional).", "example": "京都なら、新幹線が便利だ。<span>If it’s Kyoto, the shinkansen is convenient.</span>" },
+                    { "id": "n4-ato-de", "point": "After, later", "jp": "～あとで (ato de)", "meaning": "After; later.", "example": "ご飯のあとで勉強する。<span>Study after the meal.</span>" },
+                    { "id": "n4-made-ni", "point": "By (deadline)", "jp": "～までに (made ni)", "meaning": "By (a certain time).", "example": "5時までに来て。<span>Come by 5 o’clock.</span>", "refs": ["n5-made-until"] },
+                    { "id": "n4-aida", "point": "While / During", "jp": "～間 (aida)", "meaning": "While; during.", "example": "映画の間、寝ていた。<span>Slept during the movie.</span>" },
+                    { "id": "n4-aida-ni", "point": "During (event)", "jp": "～間に (aida ni)", "meaning": "While; during (event happening).", "example": "夏休みの間に海へ行った。<span>Went to the sea during summer break.</span>" },
+                    { "id": "n4-nagara", "point": "While doing", "jp": "～ながら (nagara)", "meaning": "While (doing two things).", "example": "音楽を聴きながら勉強する。<span>Study while listening to music.</span>" },
+                    { "id": "n4-mae-ni", "point": "Before", "jp": "～前に (mae ni)", "meaning": "Before doing X.", "example": "寝る前に本を読む。<span>Read a book before sleeping.</span>" },
+                    { "id": "n4-toki", "point": "When / At the time", "jp": "～時 (toki)", "meaning": "When/At the time of.", "example": "子供の時、大阪に住んでいた。<span>Lived in Osaka when I was a child.</span>" },
+                    { "id": "n4-nai-de", "point": "Without doing", "jp": "～ないで (naide)", "meaning": "Without doing ….", "example": "朝ご飯を食べないで学校へ行く。<span>Go to school without eating breakfast.</span>" }
+                ]
+            },
+            {
+                "title": "Possibility, Ability & Necessity",
+                "cards": [
+                    { "id": "n4-koto-ga-dekiru", "point": "Can do", "jp": "～ことができる (koto ga dekiru)", "meaning": "Can; be able to.", "example": "日本語を話すことができる。<span>Can speak Japanese.</span>" },
+                    { "id": "n4-rareru-potential", "point": "Potential Form", "jp": "～られる (rareru)", "meaning": "Can be done (potential verb).", "example": "この店で寿司が食べられる。<span>Can eat sushi at this shop.</span>" },
+                    { "id": "n4-nakereba-naranai", "point": "Must do", "jp": "～なければならない (nakereba naranai)", "meaning": "Must; have to.", "example": "勉強しなければならない。<span>Must study.</span>" },
+                    { "id": "n4-nakute-wa-ikenai", "point": "Must do (Strong)", "jp": "～なくてはいけない (nakute wa ikenai)", "meaning": "Must not / Ought not.", "example": "もっと努力しなくてはいけない。<span>Must try harder.</span>" },
+                    { "id": "n4-nakute-mo-ii", "point": "Don’t have to", "jp": "～なくてもいい (nakute mo ii)", "meaning": "Don’t have to; it’s okay not to.", "example": "行かなくてもいい。<span>You don’t have to go.</span>" },
+                    { "id": "n4-ga-hoshii", "point": "Want (something)", "jp": "～がほしい (ga hoshii)", "meaning": "Want something.", "example": "新しい車がほしい。<span>Want a new car.</span>" },
+                    { "id": "n4-ni-purpose", "point": "Purpose (go to do)", "jp": "～に (ni)", "meaning": "Go/come for the purpose of.", "example": "本を買いに行く。<span>Go to buy a book.</span>", "refs": ["n5-ni-dir"] }
+                ]
+            },
+            {
+                "title": "Likelihood, Guess & Concession",
+                "cards": [
+                    { "id": "n4-kamoshirenai", "point": "Might / Maybe", "jp": "～かもしれない (kamoshirenai)", "meaning": "Might be; maybe.", "example": "雨かもしれない。<span>It might rain.</span>" },
+                    { "id": "n4-deshou", "point": "Probably / I think", "jp": "～でしょう (deshou)", "meaning": "Probably; I think (polite).", "example": "明日は晴れるでしょう。<span>It will probably be fine tomorrow.</span>" },
+                    { "id": "n4-hazu-da", "point": "Should be / Must be", "jp": "～はずだ (hazu da)", "meaning": "Should be; expected to be.", "example": "彼は来るはずだ。<span>He should come.</span>" },
+                    { "id": "n4-hazu-ga-nai", "point": "Cannot be", "jp": "～はずがない (hazu ga nai)", "meaning": "Cannot be; unlikely.", "example": "そんなはずがない。<span>That can’t be.</span>" },
+                    { "id": "n4-wake-janai", "point": "Not necessarily", "jp": "～わけではない (wake dewa nai)", "meaning": "It is not the case that...", "example": "この店は高いわけではない。<span>This shop isn't necessarily expensive.</span>" },
+                    { "id": "n4-noni", "point": "Although / Even though", "jp": "～のに (noni)", "meaning": "Despite; even though.", "example": "勉強したのに、失敗した。<span>Even though I studied, I failed.</span>", "refs": ["n5-node", "n5-ga-but"] },
+                    { "id": "n4-dake-de", "point": "Just by", "jp": "～だけで (dake de)", "meaning": "Just by doing ….", "example": "これだけでいい。<span>This alone is enough.</span>" },
+                    { "id": "n4-bakari-only", "point": "Only, nothing but", "jp": "～ばかり (bakari)", "meaning": "Only doing X; full of.", "example": "ゲームばかりしている。<span>Doing nothing but playing games.</span>", "refs": ["n4-bakari-approx"] },
+                    { "id": "n4-bakari-approx", "point": "Approximately (time/amount)", "jp": "～ばかり (bakari)", "meaning": "About; approximately.", "example": "1時間ばかり待った。<span>Waited about an hour.</span>", "refs": ["n4-bakari-only"] },
+                    { "id": "n4-mitai", "point": "Like / Similar", "jp": "～みたい (mitai)", "meaning": "Like; seems like (casual).", "example": "猫みたい。<span>Like a cat.</span>" },
+                    { "id": "n4-no-you", "point": "Like / Similar (formal)", "jp": "～ように / ～ような (no you ni / no you na)", "meaning": "Like; as if.", "example": "子どものようだ。<span>Like a child.</span>" },
+                    { "id": "n4-sou-da", "point": "Looks like (Visual)", "jp": "～そうだ (sou da)", "meaning": "Looks like (based on appearance).", "example": "雨が降りそうだ。<span>It looks like it will rain.</span>" }
+                ]
+            },
+            {
+                "title": "Actions & Changes",
+                "cards": [
+                    { "id": "n4-te-miru", "point": "Try doing", "jp": "～てみる (te miru)", "meaning": "Try doing and see.", "example": "日本の映画を見てみる。<span>Try watching a Japanese movie.</span>" },
+                    { "id": "n4-te-oku", "point": "Do in advance", "jp": "～ておく (te oku)", "meaning": "Do something for later.", "example": "予約しておく。<span>Make a reservation in advance.</span>" },
+                    { "id": "n4-hajimeru", "point": "Start to", "jp": "～はじめる (hajimeru)", "meaning": "Begin to ….", "example": "雨が降り始めた。<span>It started to rain.</span>" },
+                    { "id": "n4-owaru", "point": "Finish / End", "jp": "～おわる (owaru)", "meaning": "To finish/come to an end (intransitive).", "example": "会議が終わった。<span>The meeting ended.</span>" },
+                    { "id": "n4-nikui", "point": "Difficult to", "jp": "～にくい (nikui)", "meaning": "Hard to ….", "example": "食べにくい。<span>Hard to eat.</span>" },
+                    { "id": "n4-yasui", "point": "Easy to", "jp": "～やすい (yasui)", "meaning": "Easy to ….", "example": "読みやすい。<span>Easy to read.</span>" },
+                    { "id": "n4-koto-ni-suru", "point": "Decide to", "jp": "～ことにする (koto ni suru)", "meaning": "Decide to ….", "example": "毎日走ることにする。<span>Decide to run every day.</span>" },
+                    { "id": "n4-koto-ni-naru", "point": "It has been decided", "jp": "～ことになる (koto ni naru)", "meaning": "It’s been decided that ….", "example": "来月、東京へ転勤することになった。<span>It’s been decided that I’ll transfer to Tokyo next month.</span>" },
+                    { "id": "n4-yoseru", "point": "Only / Nothing but", "jp": "～よりほかに～ない (yori hoka ni ~ nai)", "meaning": "Nothing but X.", "example": "勉強よりほかにすることがない。<span>I do nothing but study.</span>" },
+                    { "id": "n4-ni-totte", "point": "In terms of / For", "jp": "～にとって (ni totte)", "meaning": "For / In the eyes of.", "example": "私にとって、これは大切だ。<span>This is important to me.</span>" },
+                    { "id": "n4-ni-kan-ship", "point": "Regarding / Concerning", "jp": "～について (ni tsuite)", "meaning": "About / Concerning.", "example": "日本について話す。<span>Speak about Japan.</span>" }
+                ]
+            },
+            {
+                "title": "Giving & Receiving",
+                "cards": [
+                    { "id": "n4-te-ageru", "point": "Give (Outwards)", "jp": "～てあげる (te ageru)", "meaning": "Do something for someone (outwards).", "example": "弟に本を読んであげる。<span>Read a book for my brother.</span>" },
+                    { "id": "n4-te-kureru", "point": "Give (Downwards)", "jp": "～てくれる (te kureru)", "meaning": "Someone does something for me.", "example": "田中さんが本を貸してくれた。<span>Tanaka-san lent me a book.</span>" },
+                    { "id": "n4-te-morau", "point": "Receive (Upwards)", "jp": "～てもらう (te morau)", "meaning": "Have someone do something for me.", "example": "先生に日本語を教えてもらう。<span>Have the teacher teach me Japanese.</span>" }
+                ]
+            },
+            {
+                "title": "Passive & Causative (Intro)",
+                "cards": [
+                    { "id": "n4-rareru-passive", "point": "Passive Form", "jp": "～られる (rareru)", "meaning": "Is done by... (passive).", "example": "母に叱られた。<span>Was scolded by my mother.</span>" },
+                    { "id": "n4-saseru", "point": "Causative (Make do)", "jp": "～させる (saseru)", "meaning": "Make/Let someone do something.", "example": "子供に野菜を食べさせる。<span>Make the child eat vegetables.</span>" },
+                    { "id": "n4-sasareru", "point": "Causative Passive", "jp": "～させられる (saserareru)", "meaning": "Forced to do something.", "example": "飲みに行かさせられた。<span>Was forced to go drinking.</span>" }
+                ]
+            }
+        ]
+    },
+    "n3": {
+        "color": "#8E44AD",
+        "sections": [
+            {
+                "title": "Conditionals & Extent",
+                "cards": [
+                    { "id": "n3-ba-hodo", "point": "The more… the more…", "jp": "～ば～ほど (ba ~ hodo)", "meaning": "The more X, the more Y.", "example": "練習すればするほど上手になる。<span>The more you practice, the better you get.</span>" },
+                    { "id": "n3-ba-ii", "point": "Should do", "jp": "～ばいい (ba ii)", "meaning": "You should just do ….", "example": "分からない時、人に聞けばいい。<span>If you don’t understand, you should just ask someone.</span>" },
+                    { "id": "n3-ba-yokatta", "point": "Should have done", "jp": "～ばよかった (ba yokatta)", "meaning": "It would have been better if ….", "example": "もっと早く行けばよかった。<span>I should have gone earlier.</span>" },
+                    { "id": "n3-hodo", "point": "To the extent that", "jp": "～ほど (hodo)", "meaning": "To the extent that; so much that.", "example": "驚くほど速い。<span>Surprisingly fast.</span>" },
+                    { "id": "n3-hodo-nai", "point": "Not as … as", "jp": "～ほど～ない (hodo ~ nai)", "meaning": "Not as X as Y.", "example": "去年ほど寒くない。<span>Not as cold as last year.</span>" },
+                    { "id": "n3-donna-ni-temo", "point": "No matter how much", "jp": "～どんなに～ても (donna ni ~ temo)", "meaning": "No matter how ….", "example": "どんなに忙しくても電話する。<span>No matter how busy I am, I’ll call.</span>" },
+                    { "id": "n3-bakari-de-naku", "point": "Not only… but also", "jp": "～ばかりでなく (bakari de naku)", "meaning": "Not only … but also ….", "example": "肉ばかりでなく、野菜も食べる。<span>Not only meat, but also vegetables.</span>", "refs": ["n4-bakari-only"] },
+                    { "id": "n3-ippou-de", "point": "On one hand… on the other", "jp": "～一方で (ippou de)", "meaning": "On the other hand.", "example": "一方で、賛成の人もいる。<span>On the other hand, there are people who agree.</span>", "refs": ["n3-ippou-da"] },
+                    { "id": "n3-ippou-da", "point": "More and more", "jp": "～一方だ (ippou da)", "meaning": "Continues to ….", "example": "問題は複雑になる一方だ。<span>Problems are getting more and more complex.</span>", "refs": ["n3-ippou-de"] },
+                    { "id": "n3-ni-tsurete", "point": "As / In proportion to", "jp": "～につれて (ni tsurete)", "meaning": "As; in proportion to.", "example": "年をとるにつれて、目が悪くなった。<span>As I got older, my eyesight got worse.</span>" }
+                ]
+            },
+            {
+                "title": "Advice, Tendency & Attitude",
+                "cards": [
+                    { "id": "n3-beki", "point": "Should do", "jp": "～べき (beki)", "meaning": "Should do; ought to.", "example": "もっと勉強すべきだ。<span>You should study more.</span>" },
+                    { "id": "n3-beki-dewa-nai", "point": "Should not", "jp": "～べきではない (beki dewa nai)", "meaning": "Should not do.", "example": "嘘をつくべきではない。<span>You should not lie.</span>" },
+                    { "id": "n3-koto-da", "point": "Should (advice)", "jp": "～ことだ (koto da)", "meaning": "You should do ….", "example": "健康のために寝ることだ。<span>You should sleep for your health.</span>" },
+                    { "id": "n3-mono-da", "point": "Emotional truth / Should", "jp": "～ものだ (mono da)", "meaning": "It is natural that...", "example": "時間は経つのが早いものだ。<span>Time flies.</span>" },
+                    { "id": "n3-gachi", "point": "Tend to", "jp": "～がち (gachi)", "meaning": "Tends to be/do (often negative).", "example": "遅れがちだ。<span>Tends to be late.</span>" },
+                    { "id": "n3-gatai", "point": "Hard to", "jp": "～がたい (gatai)", "meaning": "Hard to (emotionally).", "example": "信じがたい。<span>Hard to believe.</span>" },
+                    { "id": "n3-kiri", "point": "Only just / Once", "jp": "～きり (kiri)", "meaning": "Only once; ever since.", "example": "一度きり会わない。<span>Meet only once.</span>", "refs": ["n3-kiru"] },
+                    { "id": "n3-sugiru", "point": "Too much / Excessive", "jp": "～すぎる (sugiru)", "meaning": "Too much; excessive.", "example": "食べすぎた。<span>Ate too much.</span>" },
+                    { "id": "n3-kuse-ni", "point": "Even though / Despite", "jp": "～くせに (kuse ni)", "meaning": "Even though; despite (blaming).", "example": "知っているくせに教えない。<span>Even though you know, you won’t teach me.</span>" },
+                    { "id": "n3-mama", "point": "Just as is", "jp": "～まま (mama)", "meaning": "Leave in a state; as it is.", "example": "眼鏡をかけたまま寝る。<span>Sleep with glasses on.</span>" },
+                    { "id": "n3-maru-de", "point": "As if", "jp": "～まるで～ようだ (maru de ~ you da)", "meaning": "Just as if; like.", "example": "まるで夢のようだ。<span>It’s just like a dream.</span>" },
+                    { "id": "n3-kawari-ni", "point": "Instead of", "jp": "～代わりに (kawari ni)", "meaning": "Instead of.", "example": "私の代わりに行く。<span>Go in my place.</span>" },
+                    { "id": "n3-nagara-mo", "point": "While / Although", "jp": "～ながらも (nagara mo)", "meaning": "While/although ….", "example": "貧乏ながらも幸せだ。<span>While poor, (I’m) happy.</span>", "refs": ["n4-nagara"] },
+                    { "id": "n3-furi-o-suru", "point": "Pretend", "jp": "～ふりをする (furi o suru)", "meaning": "Pretend to be/do.", "example": "知らないふりをする。<span>Pretend not to know.</span>" },
+                    { "id": "n3-muki", "point": "Suitable for", "jp": "～向き (muki)", "meaning": "Suitable for.", "example": "初心者向き。<span>Suitable for beginners.</span>" },
+                    { "id": "n3-darake", "point": "Full of / All over", "jp": "～だらけ (darake)", "meaning": "Full of (often negative).", "example": "間違いだらけ。<span>Full of mistakes.</span>" }
+                ]
+            },
+            {
+                "title": "Change & Result",
+                "cards": [
+                    { "id": "n3-you-ni-naru", "point": "Comes to be / Change", "jp": "～ようになる (you ni naru)", "meaning": "Change of state.", "example": "日本語が話せるようになった。<span>Became able to speak Japanese.</span>" },
+                    { "id": "n3-you-ni-suru", "point": "Make / Change into", "jp": "～ようにする (you ni suru)", "meaning": "Make an effort to become...", "example": "毎日練習するようにしている。<span>Trying to practice every day.</span>" },
+                    { "id": "n3-you-ni-mieru", "point": "Looks like / Seems", "jp": "～ように見える (you ni mieru)", "meaning": "It looks like...", "example": "雨が降るように見える。<span>It looks like it's raining.</span>" },
+                    { "id": "n3-koto-ni-naru", "point": "Result / Decision", "jp": "～ことになる (koto ni naru)", "meaning": "It results in...", "example": "来月、帰国することになった。<span>It resulted in me returning home next month.</span>" }
+                ]
+            },
+            {
+                "title": "Completion & Emphasis",
+                "cards": [
+                    { "id": "n3-kiru", "point": "Finish completely", "jp": "～切る (kiru)", "meaning": "Do something completely.", "example": "読み切る。<span>Finish reading completely.</span>" },
+                    { "id": "n3-kirenai", "point": "Can’t finish", "jp": "～切れない (kirenai)", "meaning": "Can’t finish; too much.", "example": "食べきれない。<span>Can’t finish eating.</span>" },
+                    { "id": "n3-kesshite", "point": "Never", "jp": "～決して～ない (kesshite ~ nai)", "meaning": "Never; by no means.", "example": "決して忘れない。<span>I will never forget.</span>" },
+                    { "id": "n3-betsu-ni", "point": "Not really", "jp": "～べつに～ない (betsu ni ~ nai)", "meaning": "Not particularly; not really.", "example": "別に好きじゃない。<span>Not particularly fond.</span>" },
+                    { "id": "n3-zutsu", "point": "Each / Every", "jp": "～ずつ (zutsu)", "meaning": "Each; one by one.", "example": "少しずつ食べる。<span>Eat little by little.</span>" },
+                    { "id": "n3-nari-nari", "point": "Things like / Etc.", "jp": "～なり～なり (nari nari)", "meaning": "And so on; things like...", "example": "大なり小なり問題がある。<span>There are problems big and small.</span>" },
+                    { "id": "n3-toshite-mo", "point": "Even as", "jp": "～としても (toshite mo)", "meaning": "Even as...", "example": "先生としても間違える。<span>Even as a teacher, I make mistakes.</span>" }
+                ]
+            },
+            {
+                "title": "Reason & Cause",
+                "cards": [
+                    { "id": "n3-wake-da", "point": "No wonder / That explains", "jp": "～わけだ (wake da)", "meaning": "That explains why; logically it follows.", "example": "彼は今パリにいるわけだ。<span>So that explains why he is in Paris now.</span>" },
+                    { "id": "n3-wake-ga-nai", "point": "No way", "jp": "～わけがない (wake ga nai)", "meaning": "No way; cannot be.", "example": "彼が嘘をつくわけがない。<span>There is no way he would lie.</span>" },
+                    { "id": "n3-tame-ni", "point": "For the sake of / Result", "jp": "～ために (tame ni)", "meaning": "For...; Because of (often negative).", "example": "試験のために勉強する。<span>Study for the exam.</span>" },
+                    { "id": "n3-sei-de", "point": "Due to (Negative)", "jp": "～せいで (sei de)", "meaning": "Due to (negative result).", "example": "遅れたせいで遅刻した。<span>Was late due to the delay.</span>" },
+                    { "id": "n3-okage-de", "point": "Thanks to (Positive)", "jp": "～おかげで (okage de)", "meaning": "Thanks to; because of (positive).", "example": "先生のおかげで合格できた。<span>Thanks to the teacher, I was able to pass.</span>" }
+                ]
+            }
+        ]
+    },
+    "n2": {
+        "color": "#D35400",
+        "sections": [
+            {
+                "title": "Time, Occasion & Sequence",
+                "cards": [
+                    { "id": "n2-sai", "point": "At the time / On the occasion", "jp": "～際 (sai)", "meaning": "On the occasion of; when (formal).", "example": "ご利用の際は…<span>When using (this service)…</span>" },
+                    { "id": "n2-toshite", "point": "As / In the capacity of", "jp": "～として (toshite)", "meaning": "As; in the role of.", "example": "学生として参加する。<span>Participate as a student.</span>" },
+                    { "id": "n2-toshite-no", "point": "As a / As a result of", "jp": "～としての (toshite no)", "meaning": "As a ... (noun phrase).", "example": "この製品としては悪くない。<span>As a product, it's not bad.</span>" },
+                    { "id": "n2-tabi-ni", "point": "Every time", "jp": "～たびに (tabi ni)", "meaning": "Every time X happens.", "example": "会うたびに元気になる。<span>Every time we meet, I cheer up.</span>" },
+                    { "id": "n2-gatera", "point": "While / At same time", "jp": "～がてら (gatera)", "meaning": "While doing X, also do Y.", "example": "散歩がてら、買い物をする。<span>Go shopping while taking a walk.</span>" },
+                    { "id": "n2-buri-ni", "point": "For the first time in …", "jp": "～ぶりに (buri ni)", "meaning": "For the first time in (a period).", "example": "10年ぶりに会う。<span>Meet for the first time in 10 years.</span>" },
+                    { "id": "n2-ka-nai-ka-no-uchi-ni", "point": "Immediately after", "jp": "～か～ないかのうちに (ka ~ nai ka no uchi ni)", "meaning": "As soon as; barely before/after.", "example": "着くか着かないかのうちに雨が降り出した。<span>It started raining as soon as (I) arrived.</span>" },
+                    { "id": "n2-to-tomoni", "point": "Together with", "jp": "～とともに (to tomoni)", "meaning": "Along with; as ... increases.", "example": "年齢とともに体力が衰える。<span>Physical strength declines with age.</span>" }
+                ]
+            },
+            {
+                "title": "Reason, Cause & Emphasis",
+                "cards": [
+                    { "id": "n2-ijou", "point": "Since / Now that", "jp": "～以上 (ijou)", "meaning": "Since; now that.", "example": "約束した以上、守るべきだ。<span>Since you promised, you should keep it.</span>" },
+                    { "id": "n2-dake-atte", "point": "Precisely because", "jp": "～だけあって (dake atte)", "meaning": "As expected of; because it is ….", "example": "彼女はプロだけあって上手だ。<span>She is good, as expected of a pro.</span>" },
+                    { "id": "n2-bakari-ni", "point": "Only because", "jp": "～ばかりに (bakari ni)", "meaning": "Just because of … (often negative result).", "example": "お金がないばかりに、行けなかった。<span>Just because I had no money, I couldn’t go.</span>" },
+                    { "id": "n2-wake-ga-nai", "point": "Unreasonable", "jp": "～わけがない (wake ga nai)", "meaning": "No way; cannot be.", "example": "彼が嘘をつくわけがない。<span>There is no way he would lie.</span>" },
+                    { "id": "n2-wake-dewa-nai", "point": "Not the case", "jp": "～わけではない (wake dewa nai)", "meaning": "Not necessarily; not entirely the case.", "example": "反対というわけではない。<span>I’m not necessarily opposed.</span>" },
+                    { "id": "n2-mono-dakara", "point": "Because (excuse)", "jp": "～ものだから (mono dakara)", "meaning": "Because; giving a reason/excuse.", "example": "遅れたものだから、ごめんなさい。<span>Sorry I’m late—because (something happened).</span>" },
+                    { "id": "n2-kagiri", "point": "As long as / To the extent", "jp": "～限り (kagiri)", "meaning": "As long as; to the extent of.", "example": "生きている限り希望がある。<span>There is hope as long as I am alive.</span>" },
+                    { "id": "n2-yori-hoka-nai", "point": "Nothing but", "jp": "～よりほかない (yori hoka nai)", "meaning": "Nothing but ...", "example": "勉強するよりほかない。<span>There is nothing to do but study.</span>" }
+                ]
+            },
+            {
+                "title": "Contrast, Condition & Limitation",
+                "cards": [
+                    { "id": "n2-dokoro-ka", "point": "Far from …", "jp": "～どころか (dokoro ka)", "meaning": "Far from; let alone.", "example": "独りどころか、家族もいる。<span>Far from being alone, I have a family too.</span>" },
+                    { "id": "n2-sae-nai", "point": "Let alone", "jp": "～さえ～ない (sae ~ nai)", "meaning": "Not even; let alone.", "example": "漢字はおろか、ひらがなも読めない。<span>Can't read hiragana, let alone kanji.</span>" },
+                    { "id": "n2-shika-nai", "point": "Only (emphasis)", "jp": "～しか～ない (shika ~ nai)", "meaning": "Nothing but...; only...", "example": "これしかない。<span>There is nothing but this.</span>" },
+                    { "id": "n2-dake-no-koto-de", "point": "If only", "jp": "～だけのことで (dake no koto de)", "meaning": "If only... (regret).", "example": "もっと勉強しておけばよかった。<span>I wish I had studied more.</span>" },
+                    { "id": "n2-chiottomo-nai", "point": "Not at all", "jp": "～ちっとも～ない (chitto mo ~ nai)", "meaning": "Not at all; not in the least.", "example": "ちっとも疲れていない。<span>Not tired at all.</span>" },
+                    { "id": "n2-to-shite-mo", "point": "Even if (assumption)", "jp": "～としても (toshite mo)", "meaning": "Even if we assume...", "example": "冗談としても、言いすぎだ。<span>Even as a joke, that's too much.</span>" }
+                ]
+            },
+            {
+                "title": "Appearance, Action & State",
+                "cards": [
+                    { "id": "n2-furi-o-suru", "point": "Pretend", "jp": "～ふりをする (furi o suru)", "meaning": "Pretend; act like.", "example": "知っているふりをする。<span>Pretend to know.</span>" },
+                    { "id": "n2-bakari-da", "point": "Continue to", "jp": "～ばかりだ (bakari da)", "meaning": "Keeps doing; continues to.", "example": "物価は上がるばかりだ。<span>Prices just keep rising.</span>", "refs": ["n3-bakari-de-naku", "n2-bakari-ni"] },
+                    { "id": "n2-bakari-approx", "point": "Approximately", "jp": "～ばかり (bakari)", "meaning": "About; approximately.", "example": "1時間ばかり待った。<span>Waited about an hour.</span>", "refs": ["n4-bakari-approx"] },
+                    { "id": "n2-rashii", "point": "Typical of / -like", "jp": "～らしい (rashii)", "meaning": "Typical of; hearsay.", "example": "彼らしい言葉だ。<span>That is very like him.</span>" },
+                    { "id": "n2-ppoi", "point": "Seeming / -like", "jp": "～っぽい (ppoi)", "meaning": "Look like / tendency.", "example": "忘れっぽい。<span>Forgetful.</span>" },
+                    { "id": "n2-gimi", "point": "Slight tinge of", "jp": "～ぎみ (gimi)", "meaning": "A little bit of / tinge of.", "example": "疲れぎみだ。<span>Looks a bit tired.</span>" },
+                    { "id": "n2-nari", "point": "Apparent / Such as", "jp": "～なり (nari)", "meaning": "Or something like that.", "example": "彼は来るなり来ないなりだ。<span>Whether he comes or not is up in the air.</span>" },
+                    { "id": "n2-kizuku", "point": "Remains / Traces", "jp": "～きざす (kizuku)", "meaning": "To leave traces of; remains.", "example": "生活の跡が残されている。<span>Traces of life remain.</span>" }
+                ]
+            },
+            {
+                "title": "Complex Structures",
+                "cards": [
+                    { "id": "n2-aruiwa", "point": "Or / Possibly", "jp": "～あるいは (aruiwa)", "meaning": "Or; possibly.", "example": "バスあるいは電車で行く。<span>Go by bus or train.</span>" },
+                    { "id": "n2-te-kara-shite", "point": "Once X, then...", "jp": "～てからして (te kara shite)", "meaning": "Once X happens, then Y happens.", "example": "終わってからしていい。<span>You can do it after it ends.</span>" },
+                    { "id": "n2-mae-mo-sazu", "point": "Without doing", "jp": "～前もせず (mae mo sezu)", "meaning": "Without waiting; immediately.", "example": "前もせず飛びついた。<span>Jumped in without waiting.</span>" }
+                ]
+            }
+        ]
+    },
+    "n1": {
+        "color": "#C0392B",
+        "sections": [
+            {
+                "title": "Formal & Logical Structures",
+                "cards": [
+                    { "id": "n1-zu-ni-irarenai", "point": "Cannot help but…", "jp": "～ずにはいられない (zu wa irarenai)", "meaning": "Cannot help but do; can’t refrain from.", "example": "泣かずにはいられなかった。<span>I couldn’t help but cry.</span>" },
+                    { "id": "n1-beku", "point": "In order to (Formal)", "jp": "～べく (beku)", "meaning": "In order to (formal).", "example": "成功すべく努力する。<span>Strive in order to succeed.</span>", "refs": ["n1-bekarazu", "n1-beku-shite"] },
+                    { "id": "n1-bekarazu", "point": "Must not", "jp": "～べからず (bekarazu)", "meaning": "Must not; should not.", "example": "入るべからず。<span>Must not enter.</span>" },
+                    { "id": "n1-ba-koso", "point": "Only because", "jp": "～ばこそ (ba koso)", "meaning": "Precisely because.", "example": "あなたを愛しているばこそ言うのだ。<span>I say this precisely because I love you.</span>" },
+                    { "id": "n1-koto-o-oshite", "point": "If X, then end", "jp": "～こととて (koto tote)", "meaning": "If X happens, that’s the end of it.", "example": "金がなくなればそれまでだ。<span>If you run out of money, that’s it.</span>" },
+                    { "id": "n1-naku-shite-wa", "point": "Without / If not for", "jp": "～なくしては (naku shite wa)", "meaning": "Without; if not for.", "example": "努力なくしては成功しない。<span>Without effort, you won’t succeed.</span>" },
+                    { "id": "n1-ni-taeru", "point": "Worthy of", "jp": "～にたえる (ni taeru)", "meaning": "Worthy of; can withstand.", "example": "読むにたえる作品。<span>A work worth reading.</span>" },
+                    { "id": "n1-ni-taenai", "point": "Unbearable", "jp": "～にたえない (ni taenai)", "meaning": "Unbearable; not worth watching/reading.", "example": "見るにたえない。<span>Unbearable to watch.</span>" },
+                    { "id": "n1-ni-oite", "point": "In terms of / Regarding", "jp": "～において (ni oite)", "meaning": "At; in; regarding (formal).", "example": "この点において問題がある。<span>There is a problem regarding this point.</span>" }
+                ]
+            },
+            {
+                "title": "Concessive & Extreme",
+                "cards": [
+                    { "id": "n1-wa-oroka", "point": "Let alone", "jp": "～はおろか (wa oroka)", "meaning": "Let alone; not to mention.", "example": "漢字はおろか、ひらがなも読めない。<span>Can’t read hiragana, let alone kanji.</span>" },
+                    { "id": "n1-ni-chigainai", "point": "Must be", "jp": "～に違いない (ni chigainai)", "meaning": "Must be; surely.", "example": "彼は幸せに違いない。<span>He must be happy.</span>" },
+                    { "id": "n1-sae-nai", "point": "Let alone", "jp": "～さえ～ない (sae ~ nai)", "meaning": "Not even; let alone.", "example": "親にさえ言えなかった。<span>I couldn't even tell my parents.</span>" },
+                    { "id": "n1-to-itte-mo", "point": "Even if (Verb)", "jp": "～と言っても (to itte mo)", "meaning": "Even if one says...", "example": "いくら忙しいと言っても、休暇は取るべきだ。<span>Even if you say you're busy, you should take a vacation.</span>" },
+                    { "id": "n1-gatera", "point": "While doing", "jp": "～がてら (gatera)", "meaning": "While doing X, also do Y.", "example": "散歩がてら、買い物をする。<span>Go shopping while taking a walk.</span>" }
+                ]
+            },
+            {
+                "title": "Manner, Pretense & Suffixes",
+                "cards": [
+                    { "id": "n1-buru", "point": "Pretend / Act like", "jp": "～ぶる (buru)", "meaning": "Act like; pretend to be.", "example": "偉ぶる。<span>Act important.</span>" },
+                    { "id": "n1-biru", "point": "Seeming / -like", "jp": "～びる (biru)", "meaning": "Seem to be; appear (suffix).", "example": "大人びる。<span>Act grown-up.</span>" },
+                    { "id": "n1-buri", "point": "Manner", "jp": "～ぶり (buri)", "meaning": "Manner; way of doing.", "example": "話しぶり。<span>Way of speaking.</span>" },
+                    { "id": "n1-beku-shite", "point": "As expected / Naturally", "jp": "～べくして (beku shite)", "meaning": "As is bound to; naturally.", "example": "失敗すべくして失敗した。<span>He failed as was bound to happen.</span>" },
+                    { "id": "n1-rashii", "point": "Typical of", "jp": "～らしい (rashii)", "meaning": "Typical of; characteristic of.", "example": "夏らしい天気だ。<span>Typical summer weather.</span>" },
+                    { "id": "n1-yara-yara", "point": "This and that", "jp": "～やら～やら (yara yara)", "meaning": "This and that; doing various things.", "example": "文句を言ったり言ったりした。<span>Complained and such.</span>" }
+                ]
+            },
+            {
+                "title": "Reason & Cause (Advanced)",
+                "cards": [
+                    { "id": "n1-arakajime", "point": "In advance", "jp": "あらかじめ (arakajime)", "meaning": "In advance.", "example": "あらかじめ準備する。<span>Prepare in advance.</span>" },
+                    { "id": "n1-an-no-jou", "point": "Just as expected", "jp": "あんの定 (an no jou)", "meaning": "Just as expected; sure enough.", "example": "あんの定、雨だった。<span>Just as I thought, it rained.</span>" },
+                    { "id": "n1-atte-no", "point": "Due to / Thanks to", "jp": "～あっての (atte no)", "meaning": "Exists only thanks to.", "example": "あなたがあっての私だ。<span>I exist only because of you.</span>" },
+                    { "id": "n1-dani", "point": "Even", "jp": "～だに (dani)", "meaning": "Even; not even.", "example": "夢にだに思わなかった。<span>Didn’t even dream of it.</span>" },
+                    { "id": "n1-te-kara-denai-to", "point": "Unless / Only after", "jp": "～てからでないと (te kara denai to)", "meaning": "Cannot do Y until X is done.", "example": "よく勉強してからでないと合格できない。<span>Can’t pass unless you study hard.</span>" }
+                ]
+            }
+        ]
+    }
+}
