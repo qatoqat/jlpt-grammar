@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JLPT Grammar Tree (N5–N1) — Particle Uses & Cross-References</title>
+    <title>JLPT Grammar Tree (Dynamic)</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         h1 {
@@ -69,6 +70,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
+            margin-bottom: var(--spacing-sm);
         }
 
         .pill {
@@ -88,6 +90,14 @@
         .pill.active {
             color: white;
             transform: scale(1.05);
+        }
+
+        .progress-counter {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            height: 20px; /* Keep layout stable */
+            transition: opacity 0.3s ease;
         }
 
         /* --- Layout --- */
@@ -311,1260 +321,13 @@
             <button class="pill" onclick="switchLevel('n2', '#D35400')">N2</button>
             <button class="pill" onclick="switchLevel('n1', '#C0392B')">N1</button>
         </div>
+        <div id="progress-counter" class="progress-counter"></div>
     </header>
 
     <main class="container">
         <div class="tree-line"></div>
-
-        <!-- N5 -->
-        <div id="n5" class="level-content active">
-            <section class="branch-section">
-                <h2 class="branch-header">Particles — Multiple Uses</h2>
-                <div class="cards-grid">
-                    <!-- は: topic -->
-                    <article class="card" id="n5-wa-topic" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Topic Marker</span>
-                        <span class="jp-char">は (wa)</span>
-                        <p class="meaning">Marks the topic; “as for…”</p>
-                        <div class="example">わたしは学生です。<span>I am a student.</span></div>
-                        <div class="references">
-                            <a href="#n5-wa-contrast" class="ref-link" onclick="scrollToCard(event, 'n5-wa-contrast')">See also: Contrast</a>
-                        </div>
-                    </article>
-
-                    <!-- は: contrast -->
-                    <article class="card" id="n5-wa-contrast" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Contrast Marker</span>
-                        <span class="jp-char">は (wa)</span>
-                        <p class="meaning">Implies contrast with other options (often in negatives).</p>
-                        <div class="example">肉は食べますが、魚は食べません。<span>I eat meat, but I don’t eat fish.</span></div>
-                        <div class="references">
-                            <a href="#n5-wa-topic" class="ref-link" onclick="scrollToCard(event, 'n5-wa-topic')">See also: Topic</a>
-                        </div>
-                    </article>
-
-                    <!-- が: subject -->
-                    <article class="card" id="n5-ga-subject" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Subject Marker</span>
-                        <span class="jp-char">が (ga)</span>
-                        <p class="meaning">Marks the subject (focus/emphasis).</p>
-                        <div class="example">これが本です。<span>This is the book (the one that is).</span></div>
-                        <div class="references">
-                            <a href="#n5-ga-but" class="ref-link" onclick="scrollToCard(event, 'n5-ga-but')">See also: But (conjunction)</a>
-                        </div>
-                    </article>
-
-                    <!-- が: but -->
-                    <article class="card" id="n5-ga-but" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">But / However</span>
-                        <span class="jp-char">が (ga)</span>
-                        <p class="meaning">Connects clauses with contrast (formal).</p>
-                        <div class="example">すみませんが、行けません。<span>Sorry, but I can’t go.</span></div>
-                        <div class="references">
-                            <a href="#n5-ga-subject" class="ref-link" onclick="scrollToCard(event, 'n5-ga-subject')">See also: Subject marker</a>
-                        </div>
-                    </article>
-
-                    <!-- を: object -->
-                    <article class="card" id="n5-o-obj" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Object Marker</span>
-                        <span class="jp-char">を (o)</span>
-                        <p class="meaning">Marks the object of an action.</p>
-                        <div class="example">ご飯を食べる。<span>Eat a meal.</span></div>
-                    </article>
-
-                    <!-- に: direction/destination -->
-                    <article class="card" id="n5-ni-dir" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Direction / Destination</span>
-                        <span class="jp-char">に (ni)</span>
-                        <p class="meaning">To; towards (destination).</p>
-                        <div class="example">日本に行く。<span>Go to Japan.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-time" class="ref-link" onclick="scrollToCard(event, 'n5-ni-time')">See also: Time (specific)</a>
-                            <a href="#n5-ni-exist" class="ref-link" onclick="scrollToCard(event, 'n5-ni-exist')">See also: Existence place</a>
-                        </div>
-                    </article>
-
-                    <!-- に: time (specific) -->
-                    <article class="card" id="n5-ni-time" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Time (specific)</span>
-                        <span class="jp-char">に (ni)</span>
-                        <p class="meaning">At a specific time.</p>
-                        <div class="example">7時に起きる。<span>Wake up at 7.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-dir" class="ref-link" onclick="scrollToCard(event, 'n5-ni-dir')">See also: Direction</a>
-                        </div>
-                    </article>
-
-                    <!-- に: existence place -->
-                    <article class="card" id="n5-ni-exist" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Existence (animate)</span>
-                        <span class="jp-char">に (ni) + いる</span>
-                        <p class="meaning">Indicates location of animate existence.</p>
-                        <div class="example">庭に猫がいる。<span>There is a cat in the garden.</span></div>
-                        <div class="references">
-                            <a href="#n5-ga-aru" class="ref-link" onclick="scrollToCard(event, 'n5-ga-aru')">See also: Inanimate existence (が・ある)</a>
-                        </div>
-                    </article>
-
-                    <!-- に: indirect object / receiver -->
-                    <article class="card" id="n5-ni-indirect" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Indirect Object (Receiver)</span>
-                        <span class="jp-char">に (ni)</span>
-                        <p class="meaning">Marks the recipient in giving/teaching verbs.</p>
-                        <div class="example">友達に本をあげる。<span>Give a book to a friend.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-dir" class="ref-link" onclick="scrollToCard(event, 'n5-ni-dir')">See also: Direction</a>
-                        </div>
-                    </article>
-
-                    <!-- で: place of action -->
-                    <article class="card" id="n5-de-place" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Place of Action</span>
-                        <span class="jp-char">で (de)</span>
-                        <p class="meaning">Where an action takes place (at/in).</p>
-                        <div class="example">図書館で勉強する。<span>Study at the library.</span></div>
-                        <div class="references">
-                            <a href="#n5-de-means" class="ref-link" onclick="scrollToCard(event, 'n5-de-means')">See also: Means/Method</a>
-                            <a href="#n5-de-cause" class="ref-link" onclick="scrollToCard(event, 'n5-de-cause')">See also: Reason</a>
-                        </div>
-                    </article>
-
-                    <!-- で: means/method -->
-                    <article class="card" id="n5-de-means" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Means / Method</span>
-                        <span class="jp-char">で (de)</span>
-                        <p class="meaning">By means of; with; using.</p>
-                        <div class="example">日本語で書く。<span>Write in Japanese.</span></div>
-                        <div class="references">
-                            <a href="#n5-de-place" class="ref-link" onclick="scrollToCard(event, 'n5-de-place')">See also: Place of action</a>
-                        </div>
-                    </article>
-
-                    <!-- で: total amount / time limit -->
-                    <article class="card" id="n5-de-total" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Total Amount / Time Limit</span>
-                        <span class="jp-char">で (de)</span>
-                        <p class="meaning">In (total amount/time); within.</p>
-                        <div class="example">全部で1000円です。<span>It’s 1000 yen in total.</span></div>
-                        <div class="references">
-                            <a href="#n5-de-cause" class="ref-link" onclick="scrollToCard(event, 'n5-de-cause')">See also: Reason</a>
-                        </div>
-                    </article>
-
-                    <!-- で: reason/cause -->
-                    <article class="card" id="n5-de-cause" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Reason / Cause</span>
-                        <span class="jp-char">で (de)</span>
-                        <p class="meaning">Because of (cause/reason).</p>
-                        <div class="example">病気で休む。<span>Rest because of illness.</span></div>
-                        <div class="references">
-                            <a href="#n5-node" class="ref-link" onclick="scrollToCard(event, 'n5-node')">See also: ので (polite reason)</a>
-                        </div>
-                    </article>
-
-                    <!-- の: possessive -->
-                    <article class="card" id="n5-no-possessive" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Possessive / Modifier</span>
-                        <span class="jp-char">の (no)</span>
-                        <p class="meaning">'s; connects nouns.</p>
-                        <div class="example">私の本。<span>My book.</span></div>
-                        <div class="references">
-                            <a href="#n5-no-nominalizer" class="ref-link" onclick="scrollToCard(event, 'n5-no-nominalizer')">See also: Nominalizer</a>
-                        </div>
-                    </article>
-
-                    <!-- の: nominalizer -->
-                    <article class="card" id="n5-no-nominalizer" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Verb Nominalizer</span>
-                        <span class="jp-char">の (no)</span>
-                        <p class="meaning">Turns a clause/verb into a noun.</p>
-                        <div class="example">走るのが好き。<span>I like running.</span></div>
-                        <div class="references">
-                            <a href="#n5-no-possessive" class="ref-link" onclick="scrollToCard(event, 'n5-no-possessive')">See also: Possessive</a>
-                        </div>
-                    </article>
-
-                    <!-- か: question -->
-                    <article class="card" id="n5-ka-question" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Question Particle</span>
-                        <span class="jp-char">か (ka)</span>
-                        <p class="meaning">Makes a sentence a question.</p>
-                        <div class="example">行きますか。<span>Will you go?</span></div>
-                        <div class="references">
-                            <a href="#n5-ka-or" class="ref-link" onclick="scrollToCard(event, 'n5-ka-or')">See also: Or (embedded questions)</a>
-                        </div>
-                    </article>
-
-                    <!-- か: or (embedded questions/choices) -->
-                    <article class="card" id="n5-ka-or" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Or (Choice)</span>
-                        <span class="jp-char">か (ka)</span>
-                        <p class="meaning">Or; indicates a choice or uncertainty.</p>
-                        <div class="example">コーヒーか紅茶。<span>Coffee or tea.</span></div>
-                        <div class="references">
-                            <a href="#n5-ka-question" class="ref-link" onclick="scrollToCard(event, 'n5-ka-question')">See also: Question</a>
-                        </div>
-                    </article>
-
-                    <!-- から: from (origin) -->
-                    <article class="card" id="n5-kara-from" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">From (Origin)</span>
-                        <span class="jp-char">から (kara)</span>
-                        <p class="meaning">Starting point/origin.</p>
-                        <div class="example">日本から来た。<span>Came from Japan.</span></div>
-                        <div class="references">
-                            <a href="#n5-kara-because" class="ref-link" onclick="scrollToCard(event, 'n5-kara-because')">See also: Because</a>
-                        </div>
-                    </article>
-
-                    <!-- から: because (reason) -->
-                    <article class="card" id="n5-kara-because" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Because (Reason)</span>
-                        <span class="jp-char">から (kara)</span>
-                        <p class="meaning">Because, since (casual).</p>
-                        <div class="example">寒いから行かない。<span>I won’t go because it’s cold.</span></div>
-                        <div class="references">
-                            <a href="#n5-kara-from" class="ref-link" onclick="scrollToCard(event, 'n5-kara-from')">See also: From</a>
-                            <a href="#n5-node" class="ref-link" onclick="scrollToCard(event, 'n5-node')">See also: ので</a>
-                        </div>
-                    </article>
-
-                    <!-- まで: until/to (extent) -->
-                    <article class="card" id="n5-made-until" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Until / To (Extent)</span>
-                        <span class="jp-char">まで (made)</span>
-                        <p class="meaning">Up to (time/place); as far as.</p>
-                        <div class="example">5時まで待つ。<span>Wait until 5.</span></div>
-                        <div class="references">
-                            <a href="#n4-made-ni" class="ref-link" onclick="scrollToCard(event, 'n4-made-ni')">See also: By (deadline) – までに</a>
-                        </div>
-                    </article>
-
-                    <!-- へ: direction (toward) -->
-                    <article class="card" id="n5-e-direction" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Direction (towards)</span>
-                        <span class="jp-char">へ (e)</span>
-                        <p class="meaning">Towards (directional emphasis).</p>
-                        <div class="example">学校へ行く。<span>Go towards school.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-dir" class="ref-link" onclick="scrollToCard(event, 'n5-ni-dir')">See also: Destination (に)</a>
-                        </div>
-                    </article>
-
-                    <!-- と: and (with nouns) -->
-                    <article class="card" id="n5-to-and" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">And / With</span>
-                        <span class="jp-char">と (to)</span>
-                        <p class="meaning">And (listing nouns); with.</p>
-                        <div class="example">友達と行く。<span>Go with a friend.</span></div>
-                    </article>
-
-                    <!-- も: also/too -->
-                    <article class="card" id="n5-mo-also" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Also / Too</span>
-                        <span class="jp-char">も (mo)</span>
-                        <p class="meaning">Also; too; as well.</p>
-                        <div class="example">私も行く。<span>I’m going too.</span></div>
-                    </article>
-
-                    <!-- や: and (partial list) -->
-                    <article class="card" id="n5-ya" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">And (partial list)</span>
-                        <span class="jp-char">や (ya)</span>
-                        <p class="meaning">And; non-exhaustive list.</p>
-                        <div class="example">リンゴやミカン。<span>Apples, oranges, etc.</span></div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="branch-section">
-                <h2 class="branch-header">Copula & Basic Sentences</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n5-desu" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">To be (polite)</span>
-                        <span class="jp-char">です (desu)</span>
-                        <p class="meaning">Is/are/am (polite copula).</p>
-                        <div class="example">学生です。<span>I am a student.</span></div>
-                    </article>
-                    <article class="card" id="n5-da" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">To be (casual)</span>
-                        <span class="jp-char">だ (da)</span>
-                        <p class="meaning">Is/are/am (plain copula).</p>
-                        <div class="example">雨だ。<span>It’s raining.</span></div>
-                    </article>
-                    <article class="card" id="n5-ja-nai" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Is not (polite)</span>
-                        <span class="jp-char">じゃない / ではない (ja nai / de wa nai)</span>
-                        <p class="meaning">Is not (negative of です/だ).</p>
-                        <div class="example">学生ではない。<span>Not a student.</span></div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="branch-section">
-                <h2 class="branch-header">Verbs (Basic Forms)</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n5-masu" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Polite Present/Future</span>
-                        <span class="jp-char">～ます (masu)</span>
-                        <p class="meaning">Will do / do (polite non-past).</p>
-                        <div class="example">行きます。<span>Will go.</span></div>
-                    </article>
-                    <article class="card" id="n5-mashita" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Polite Past</span>
-                        <span class="jp-char">～ました (mashita)</span>
-                        <p class="meaning">Did (polite past).</p>
-                        <div class="example">行きました。<span>Went.</span></div>
-                    </article>
-                    <article class="card" id="n5-masen" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Polite Negative</span>
-                        <span class="jp-char">～ません (masen)</span>
-                        <p class="meaning">Will not do / do not (polite).</p>
-                        <div class="example">行きません。<span>Won’t go.</span></div>
-                    </article>
-                    <article class="card" id="n5-te" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Te-form (connect/do)</span>
-                        <span class="jp-char">～て (te)</span>
-                        <p class="meaning">Connects actions; basis for requests.</p>
-                        <div class="example">本を読んで、寝る。<span>Read a book and sleep.</span></div>
-                    </article>
-                    <article class="card" id="n5-te-kudasai" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Request (Please do)</span>
-                        <span class="jp-char">～てください (te kudasai)</span>
-                        <p class="meaning">Please do …</p>
-                        <div class="example">座ってください。<span>Please sit down.</span></div>
-                    </article>
-                    <article class="card" id="n5-te-iru" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Progressive / State</span>
-                        <span class="jp-char">～ている (te iru)</span>
-                        <p class="meaning">Doing now; resulting state.</p>
-                        <div class="example">今食べている。<span>Eating now.</span></div>
-                    </article>
-                    <article class="card" id="n5-te-kara" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">After doing</span>
-                        <span class="jp-char">～てから (te kara)</span>
-                        <p class="meaning">After doing X.</p>
-                        <div class="example">ご飯を食べてから行く。<span>Go after eating.</span></div>
-                    </article>
-                    <article class="card" id="n5-naide-kudasai" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Please don’t</span>
-                        <span class="jp-char">～ないでください (naide kudasai)</span>
-                        <p class="meaning">Please don’t do …</p>
-                        <div class="example">入らないでください。<span>Please don’t enter.</span></div>
-                    </article>
-                    <article class="card" id="n5-te-wa-ikenai" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Must not</span>
-                        <span class="jp-char">～てはいけない (te wa ikenai)</span>
-                        <p class="meaning">Must not do …</p>
-                        <div class="example">ここに入ってはいけない。<span>Must not enter here.</span></div>
-                    </article>
-                    <article class="card" id="n5-tai" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Want to do</span>
-                        <span class="jp-char">～たい (tai)</span>
-                        <p class="meaning">Want to do …</p>
-                        <div class="example">行きたい。<span>Want to go.</span></div>
-                    </article>
-                    <article class="card" id="n5-ta-koto-ga-aru" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Have done before</span>
-                        <span class="jp-char">～たことがある (ta koto ga aru)</span>
-                        <p class="meaning">Have done (experience).</p>
-                        <div class="example">日本に行ったことがある。<span>Have been to Japan.</span></div>
-                    </article>
-                    <article class="card" id="n5-tsumori-da" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Plan / Intend to</span>
-                        <span class="jp-char">～つもりだ (tsumori da)</span>
-                        <p class="meaning">Plan to; intend to.</p>
-                        <div class="example">行くつもりだ。<span>Plan to go.</span></div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="branch-section">
-                <h2 class="branch-header">Adjectives</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n5-i-adj" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">i-adj present</span>
-                        <span class="jp-char">～い (i)</span>
-                        <p class="meaning">Is [adj].</p>
-                        <div class="example">大きい。<span>Big.</span></div>
-                    </article>
-                    <article class="card" id="n5-i-adj-neg" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">i-adj negative</span>
-                        <span class="jp-char">～くない (kunai)</span>
-                        <p class="meaning">Is not [adj].</p>
-                        <div class="example">大きくない。<span>Not big.</span></div>
-                    </article>
-                    <article class="card" id="n5-i-adj-past" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">i-adj past</span>
-                        <span class="jp-char">～かった (katta)</span>
-                        <p class="meaning">Was [adj].</p>
-                        <div class="example">大きかった。<span>Was big.</span></div>
-                    </article>
-                    <article class="card" id="n5-na-adj" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">na-adj present</span>
-                        <span class="jp-char">～な / だ (na / da)</span>
-                        <p class="meaning">Is [adj] (na-adj).</p>
-                        <div class="example">静かだ。<span>Quiet.</span></div>
-                    </article>
-                    <article class="card" id="n5-na-adj-neg" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">na-adj negative</span>
-                        <span class="jp-char">～じゃない (ja nai)</span>
-                        <p class="meaning">Is not [na-adj].</p>
-                        <div class="example">静かじゃない。<span>Not quiet.</span></div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="branch-section">
-                <h2 class="branch-header">Connectors & Others</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n5-node" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Because (softer)</span>
-                        <span class="jp-char">～ので (node)</span>
-                        <p class="meaning">Because, since (polite).</p>
-                        <div class="example">寒いので行かない。<span>Since it’s cold, I won’t go.</span></div>
-                        <div class="references">
-                            <a href="#n5-kara-because" class="ref-link" onclick="scrollToCard(event, 'n5-kara-because')">See also: から (because)</a>
-                        </div>
-                    </article>
-                    <article class="card" id="n5-kedo" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">But / However</span>
-                        <span class="jp-char">～けど / けれど (kedo / keredo)</span>
-                        <p class="meaning">But, however (casual).</p>
-                        <div class="example">安いけど、古い。<span>It’s cheap but old.</span></div>
-                        <div class="references">
-                            <a href="#n5-ga-but" class="ref-link" onclick="scrollToCard(event, 'n5-ga-but')">See also: が (but)</a>
-                        </div>
-                    </article>
-                    <article class="card" id="n5-yori" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Comparison</span>
-                        <span class="jp-char">～より～のほうが (yori ~ no hou ga)</span>
-                        <p class="meaning">More X than Y.</p>
-                        <div class="example">歩くよりバスのほうが速い。<span>The bus is faster than walking.</span></div>
-                    </article>
-                    <article class="card" id="n5-ga-aru" data-color="#27AE60" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Existence (inanimate)</span>
-                        <span class="jp-char">～がある (ga aru)</span>
-                        <p class="meaning">There is (a thing).</p>
-                        <div class="example">庭に木がある。<span>There is a tree in the yard.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-exist" class="ref-link" onclick="scrollToCard(event, 'n5-ni-exist')">See also: Animate existence (に・いる)</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <!-- N4 -->
-        <div id="n4" class="level-content">
-            <section class="branch-section">
-                <h2 class="branch-header">Conditionals & Time</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n4-ba" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">If (conditional)</span>
-                        <span class="jp-char">～ば (ba)</span>
-                        <p class="meaning">If … then ….</p>
-                        <div class="example">行けば、会える。<span>If you go, you can meet.</span></div>
-                    </article>
-                    <article class="card" id="n4-tara" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">When / If (after)</span>
-                        <span class="jp-char">～たら (tara)</span>
-                        <p class="meaning">When/if it happens ….</p>
-                        <div class="example">家に着いたら連絡する。<span>When I get home, I’ll contact you.</span></div>
-                    </article>
-                    <article class="card" id="n4-baai-wa" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">In the case that</span>
-                        <span class="jp-char">～場合は (baai wa)</span>
-                        <p class="meaning">In the event/ case that ….</p>
-                        <div class="example">雨の場合は中止だ。<span>In case of rain, it’s cancelled.</span></div>
-                    </article>
-                    <article class="card" id="n4-nara" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">If, in case</span>
-                        <span class="jp-char">～なら (nara)</span>
-                        <p class="meaning">If (topic/conditional).</p>
-                        <div class="example">京都なら、新幹線が便利だ。<span>If it’s Kyoto, the shinkansen is convenient.</span></div>
-                    </article>
-                    <article class="card" id="n4-ato-de" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">After, later</span>
-                        <span class="jp-char">～あとで (ato de)</span>
-                        <p class="meaning">After; later.</p>
-                        <div class="example">ご飯のあとで勉強する。<span>Study after the meal.</span></div>
-                    </article>
-                    <article class="card" id="n4-made-ni" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">By (deadline)</span>
-                        <span class="jp-char">～までに (made ni)</span>
-                        <p class="meaning">By (a certain time).</p>
-                        <div class="example">5時までに来て。<span>Come by 5 o’clock.</span></div>
-                        <div class="references">
-                            <a href="#n5-made-until" class="ref-link" onclick="scrollToCard(event, 'n5-made-until')">See also: Until (N5)</a>
-                        </div>
-                    </article>
-                    <article class="card" id="n4-aida" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">While / During</span>
-                        <span class="jp-char">～間 (aida)</span>
-                        <p class="meaning">While; during.</p>
-                        <div class="example">映画の間、寝ていた。<span>Slept during the movie.</span></div>
-                    </article>
-                    <article class="card" id="n4-nagara" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">While doing</span>
-                        <span class="jp-char">～ながら (nagara)</span>
-                        <p class="meaning">While (doing two things).</p>
-                        <div class="example">音楽を聴きながら勉強する。<span>Study while listening to music.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Possibility, Ability & Necessity</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n4-koto-ga-dekiru" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Can do</span>
-                        <span class="jp-char">～ことができる (koto ga dekiru)</span>
-                        <p class="meaning">Can; be able to.</p>
-                        <div class="example">日本語を話すことができる。<span>Can speak Japanese.</span></div>
-                    </article>
-                    <article class="card" id="n4-nakereba-naranai" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Must do</span>
-                        <span class="jp-char">～なければならない (nakereba naranai)</span>
-                        <p class="meaning">Must; have to.</p>
-                        <div class="example">勉強しなければならない。<span>Must study.</span></div>
-                    </article>
-                    <article class="card" id="n4-nakute-mo-ii" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Don’t have to</span>
-                        <span class="jp-char">～なくてもいい (nakute mo ii)</span>
-                        <p class="meaning">Don’t have to; it’s okay not to.</p>
-                        <div class="example">行かなくてもいい。<span>You don’t have to go.</span></div>
-                    </article>
-                    <article class="card" id="n4-ga-hoshii" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Want (something)</span>
-                        <span class="jp-char">～がほしい (ga hoshii)</span>
-                        <p class="meaning">Want something.</p>
-                        <div class="example">新しい車がほしい。<span>Want a new car.</span></div>
-                    </article>
-                    <article class="card" id="n4-ni-purpose" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Purpose (go to do)</span>
-                        <span class="jp-char">～に (ni)</span>
-                        <p class="meaning">Go/come for the purpose of.</p>
-                        <div class="example">本を買いに行く。<span>Go to buy a book.</span></div>
-                        <div class="references">
-                            <a href="#n5-ni-dir" class="ref-link" onclick="scrollToCard(event, 'n5-ni-dir')">See also: Direction (N5)</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Likelihood, Guess & Concession</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n4-kamoshirenai" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Might / Maybe</span>
-                        <span class="jp-char">～かもしれない (kamoshirenai)</span>
-                        <p class="meaning">Might be; maybe.</p>
-                        <div class="example">雨かもしれない。<span>It might rain.</span></div>
-                    </article>
-                    <article class="card" id="n4-hazu-da" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should be / Must be</span>
-                        <span class="jp-char">～はずだ (hazu da)</span>
-                        <p class="meaning">Should be; expected to be.</p>
-                        <div class="example">彼は来るはずだ。<span>He should come.</span></div>
-                    </article>
-                    <article class="card" id="n4-hazu-ga-nai" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Cannot be</span>
-                        <span class="jp-char">～はずがない (hazu ga nai)</span>
-                        <p class="meaning">Cannot be; unlikely.</p>
-                        <div class="example">そんなはずがない。<span>That can’t be.</span></div>
-                    </article>
-                    <article class="card" id="n4-noni" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Although / Even though</span>
-                        <span class="jp-char">～のに (noni)</span>
-                        <p class="meaning">Despite; even though.</p>
-                        <div class="example">勉強したのに、失敗した。<span>Even though I studied, I failed.</span></div>
-                    </article>
-                    <article class="card" id="n4-dake-de" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Just by</span>
-                        <span class="jp-char">～だけで (dake de)</span>
-                        <p class="meaning">Just by doing ….</p>
-                        <div class="example">これだけでいい。<span>This alone is enough.</span></div>
-                    </article>
-                    <article class="card" id="n4-bakari-only" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Only, nothing but</span>
-                        <span class="jp-char">～ばかり (bakari)</span>
-                        <p class="meaning">Only doing X; full of.</p>
-                        <div class="example">ゲームばかりしている。<span>Doing nothing but playing games.</span></div>
-                    </article>
-                    <article class="card" id="n4-mitai" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Like / Similar</span>
-                        <span class="jp-char">～みたい (mitai)</span>
-                        <p class="meaning">Like; seems like (casual).</p>
-                        <div class="example">猫みたい。<span>Like a cat.</span></div>
-                    </article>
-                    <article class="card" id="n4-no-you" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Like / Similar (formal)</span>
-                        <span class="jp-char">～のように / ～のような (no you ni / no you na)</span>
-                        <p class="meaning">Like; as if.</p>
-                        <div class="example">子どものようだ。<span>Like a child.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Actions & Changes</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n4-te-miru" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Try doing</span>
-                        <span class="jp-char">～てみる (te miru)</span>
-                        <p class="meaning">Try doing and see.</p>
-                        <div class="example">日本の映画を見てみる。<span>Try watching a Japanese movie.</span></div>
-                    </article>
-                    <article class="card" id="n4-te-oku" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Do in advance</span>
-                        <span class="jp-char">～ておく (te oku)</span>
-                        <p class="meaning">Do something for later.</p>
-                        <div class="example">予約しておく。<span>Make a reservation in advance.</span></div>
-                    </article>
-                    <article class="card" id="n4-hajimeru" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Start to</span>
-                        <span class="jp-char">～はじめる (hajimeru)</span>
-                        <p class="meaning">Begin to ….</p>
-                        <div class="example">雨が降り始めた。<span>It started to rain.</span></div>
-                    </article>
-                    <article class="card" id="n4-nikui" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Difficult to</span>
-                        <span class="jp-char">～にくい (nikui)</span>
-                        <p class="meaning">Hard to ….</p>
-                        <div class="example">食べにくい。<span>Hard to eat.</span></div>
-                    </article>
-                    <article class="card" id="n4-naide" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Without doing</span>
-                        <span class="jp-char">～ないで (naide)</span>
-                        <p class="meaning">Without doing ….</p>
-                        <div class="example">朝ご飯を食べないで学校へ行く。<span>Go to school without eating breakfast.</span></div>
-                    </article>
-                    <article class="card" id="n4-koto-ni-suru" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Decide to</span>
-                        <span class="jp-char">～ことにする (koto ni suru)</span>
-                        <p class="meaning">Decide to ….</p>
-                        <div class="example">毎日走ることにする。<span>Decide to run every day.</span></div>
-                    </article>
-                    <article class="card" id="n4-koto-ni-naru" data-color="#2980B9" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">It has been decided</span>
-                        <span class="jp-char">～ことになる (koto ni naru)</span>
-                        <p class="meaning">It’s been decided that ….</p>
-                        <div class="example">来月、東京へ転勤することになった。<span>It’s been decided that I’ll transfer to Tokyo next month.</span></div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <!-- N3 -->
-        <div id="n3" class="level-content">
-            <section class="branch-section">
-                <h2 class="branch-header">Conditionals & Extent</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n3-ba-hodo" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">The more… the more…</span>
-                        <span class="jp-char">～ば～ほど (ba ~ hodo)</span>
-                        <p class="meaning">The more X, the more Y.</p>
-                        <div class="example">練習すればするほど上手になる。<span>The more you practice, the better you get.</span></div>
-                    </article>
-                    <article class="card" id="n3-ba-ii" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should do</span>
-                        <span class="jp-char">～ばいい (ba ii)</span>
-                        <p class="meaning">You should just do ….</p>
-                        <div class="example">分からない時、人に聞けばいい。<span>If you don’t understand, you should just ask someone.</span></div>
-                    </article>
-                    <article class="card" id="n3-ba-yokatta" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should have done</span>
-                        <span class="jp-char">～ばよかった (ba yokatta)</span>
-                        <p class="meaning">It would have been better if ….</p>
-                        <div class="example">もっと早く行けばよかった。<span>I should have gone earlier.</span></div>
-                    </article>
-                    <article class="card" id="n3-hodo" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">To the extent that</span>
-                        <span class="jp-char">～ほど (hodo)</span>
-                        <p class="meaning">To the extent that; so much that.</p>
-                        <div class="example">驚くほど速い。<span>Surprisingly fast.</span></div>
-                    </article>
-                    <article class="card" id="n3-hodo-nai" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Not as … as</span>
-                        <span class="jp-char">～ほど～ない (hodo ~ nai)</span>
-                        <p class="meaning">Not as X as Y.</p>
-                        <div class="example">去年ほど寒くない。<span>Not as cold as last year.</span></div>
-                    </article>
-                    <article class="card" id="n3-temo" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Even if / No matter how</span>
-                        <span class="jp-char">～ても (temo)</span>
-                        <p class="meaning">Even if …; no matter ….</p>
-                        <div class="example">雨が降っても行く。<span>Even if it rains, I’ll go.</span></div>
-                    </article>
-                    <article class="card" id="n3-donna-ni-temo" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">No matter how much</span>
-                        <span class="jp-char">～どんなに～ても (donna ni ~ temo)</span>
-                        <p class="meaning">No matter how ….</p>
-                        <div class="example">どんなに忙しくても電話する。<span>No matter how busy I am, I’ll call.</span></div>
-                    </article>
-                    <article class="card" id="n3-bakari-de-naku" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Not only… but also</span>
-                        <span class="jp-char">～ばかりでなく (bakari de naku)</span>
-                        <p class="meaning">Not only … but also ….</p>
-                        <div class="example">肉ばかりでなく、野菜も食べる。<span>Not only meat, but also vegetables.</span></div>
-                    </article>
-                    <article class="card" id="n3-ippou-de" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">On one hand… on the other</span>
-                        <span class="jp-char">～一方で (ippou de)</span>
-                        <p class="meaning">On the other hand.</p>
-                        <div class="example">一方で、賛成の人もいる。<span>On the other hand, there are people who agree.</span></div>
-                    </article>
-                    <article class="card" id="n3-ippou-da" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">More and more</span>
-                        <span class="jp-char">～一方だ (ippou da)</span>
-                        <p class="meaning">Continues to ….</p>
-                        <div class="example">問題は複雑になる一方だ。<span>Problems are getting more and more complex.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Advice, Tendency & Attitude</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n3-beki" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should do</span>
-                        <span class="jp-char">～べき (beki)</span>
-                        <p class="meaning">Should do; ought to.</p>
-                        <div class="example">もっと勉強すべきだ。<span>You should study more.</span></div>
-                    </article>
-                    <article class="card" id="n3-beki-dewa-nai" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should not</span>
-                        <span class="jp-char">～べきではない (beki dewa nai)</span>
-                        <p class="meaning">Should not do.</p>
-                        <div class="example">嘘をつくべきではない。<span>You should not lie.</span></div>
-                    </article>
-                    <article class="card" id="n3-koto-da" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Should (advice)</span>
-                        <span class="jp-char">～ことだ (koto da)</span>
-                        <p class="meaning">You should do ….</p>
-                        <div class="example">健康のために寝ることだ。<span>You should sleep for your health.</span></div>
-                    </article>
-                    <article class="card" id="n3-gachi" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Tend to</span>
-                        <span class="jp-char">～がち (gachi)</span>
-                        <p class="meaning">Tends to be/do (often negative).</p>
-                        <div class="example">遅れがちだ。<span>Tends to be late.</span></div>
-                    </article>
-                    <article class="card" id="n3-gatai" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Hard to</span>
-                        <span class="jp-char">～がたい (gatai)</span>
-                        <p class="meaning">Hard to (emotionally).</p>
-                        <div class="example">信じがたい。<span>Hard to believe.</span></div>
-                    </article>
-                    <article class="card" id="n3-kuse-ni" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Even though / Despite</span>
-                        <span class="jp-char">～くせに (kuse ni)</span>
-                        <p class="meaning">Even though; despite (blaming).</p>
-                        <div class="example">知っているくせに教えない。<span>Even though you know, you won’t teach me.</span></div>
-                    </article>
-                    <article class="card" id="n3-mama" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Just as is</span>
-                        <span class="jp-char">～まま (mama)</span>
-                        <p class="meaning">Leave in a state; as it is.</p>
-                        <div class="example">眼鏡をかけたまま寝る。<span>Sleep with glasses on.</span></div>
-                    </article>
-                    <article class="card" id="n3-maru-de" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">As if</span>
-                        <span class="jp-char">～まるで～ようだ (maru de ~ you da)</span>
-                        <p class="meaning">Just as if; like.</p>
-                        <div class="example">まるで夢のようだ。<span>It’s just like a dream.</span></div>
-                    </article>
-                    <article class="card" id="n3-kawari-ni" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Instead of</span>
-                        <span class="jp-char">～代わりに (kawari ni)</span>
-                        <p class="meaning">Instead of.</p>
-                        <div class="example">私の代わりに行く。<span>Go in my place.</span></div>
-                    </article>
-                    <article class="card" id="n3-nagara-mo" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">While / Although</span>
-                        <span class="jp-char">～ながらも (nagara mo)</span>
-                        <p class="meaning">While/although ….</p>
-                        <div class="example">貧乏ながらも幸せだ。<span>While poor, (I’m) happy.</span></div>
-                    </article>
-                    <article class="card" id="n3-furi-o-suru" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Pretend</span>
-                        <span class="jp-char">～ふりをする (furi o suru)</span>
-                        <p class="meaning">Pretend to be/do.</p>
-                        <div class="example">知らないふりをする。<span>Pretend not to know.</span></div>
-                    </article>
-                    <article class="card" id="n3-muki" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Suitable for</span>
-                        <span class="jp-char">～向き (muki)</span>
-                        <p class="meaning">Suitable for.</p>
-                        <div class="example">初心者向き。<span>Suitable for beginners.</span></div>
-                    </article>
-                    <article class="card" id="n3-muke" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Intended for</span>
-                        <span class="jp-char">～向け (muke)</span>
-                        <p class="meaning">Intended for; aimed at.</p>
-                        <div class="example">子供向けの番組。<span>A program aimed at children.</span></div>
-                    </article>
-                    <article class="card" id="n3-darake" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Full of / All over</span>
-                        <span class="jp-char">～だらけ (darake)</span>
-                        <p class="meaning">Full of (often negative).</p>
-                        <div class="example">間違いだらけ。<span>Full of mistakes.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Completion & Emphasis</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n3-kiru" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Finish completely</span>
-                        <span class="jp-char">～切る (kiru)</span>
-                        <p class="meaning">Do something completely.</p>
-                        <div class="example">読み切る。<span>Finish reading completely.</span></div>
-                    </article>
-                    <article class="card" id="n3-kirenai" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Can’t finish</span>
-                        <span class="jp-char">～切れない (kirenai)</span>
-                        <p class="meaning">Can’t finish; too much.</p>
-                        <div class="example">食べきれない。<span>Can’t finish eating.</span></div>
-                    </article>
-                    <article class="card" id="n3-kiri" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Only just</span>
-                        <span class="jp-char">～きり (kiri)</span>
-                        <p class="meaning">Only; just (and nothing since).</p>
-                        <div class="example">一度きり会わない。<span>Meet only once.</span></div>
-                    </article>
-                    <article class="card" id="n3-metta-ni" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Hardly ever</span>
-                        <span class="jp-char">～めったに～ない (metta ni ~ nai)</span>
-                        <p class="meaning">Hardly ever; rarely.</p>
-                        <div class="example">めったに行かない。<span>Hardly ever go.</span></div>
-                    </article>
-                    <article class="card" id="n3-kesshite" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Never / By no means</span>
-                        <span class="jp-char">～決して～ない (kesshite ~ nai)</span>
-                        <p class="meaning">Never; by no means.</p>
-                        <div class="example">決して忘れない。<span>I will never forget.</span></div>
-                    </article>
-                    <article class="card" id="n3-betsu-ni" data-color="#8E44AD" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Not really</span>
-                        <span class="jp-char">～べつに～ない (betsu ni ~ nai)</span>
-                        <p class="meaning">Not particularly; not really.</p>
-                        <div class="example">別に好きじゃない。<span>Not particularly fond.</span></div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <!-- N2 -->
-        <div id="n2" class="level-content">
-            <section class="branch-section">
-                <h2 class="branch-header">Reason, Cause & Emphasis</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n2-wake-da" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">No wonder / That explains</span>
-                        <span class="jp-char">～わけだ (wake da)</span>
-                        <p class="meaning">That explains why; logically it follows.</p>
-                        <div class="example">彼は今パリにいるわけだ。<span>So that explains why he is in Paris now.</span></div>
-                    </article>
-                    <article class="card" id="n2-wake-ga-nai" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Unreasonable that / wonder</span>
-                        <span class="jp-char">～わけがない (wake ga nai)</span>
-                        <p class="meaning">No way; cannot be.</p>
-                        <div class="example">彼が嘘をつくわけがない。<span>There is no way he would lie.</span></div>
-                    </article>
-                    <article class="card" id="n2-wake-dewa-nai" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Not the case that</span>
-                        <span class="jp-char">～わけではない (wake dewa nai)</span>
-                        <p class="meaning">Not necessarily; not entirely the case.</p>
-                        <div class="example">反対というわけではない。<span>I’m not necessarily opposed.</span></div>
-                    </article>
-                    <article class="card" id="n2-ijou" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Because (since)</span>
-                        <span class="jp-char">～以上 (ijou)</span>
-                        <p class="meaning">Since; now that.</p>
-                        <div class="example">約束した以上、守るべきだ。<span>Since you promised, you should keep it.</span></div>
-                    </article>
-                    <article class="card" id="n2-dake-atte" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Precisely because</span>
-                        <span class="jp-char">～だけあって (dake atte)</span>
-                        <p class="meaning">As expected of; because it is ….</p>
-                        <div class="example">彼女はプロだけあって上手だ。<span>She is good, as expected of a pro.</span></div>
-                    </article>
-                    <article class="card" id="n2-mono-dakara" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Due to / Because (excuse)</span>
-                        <span class="jp-char">～ものだから (mono dakara)</span>
-                        <p class="meaning">Because; giving a reason/excuse.</p>
-                        <div class="example">遅れたものだから、ごめんなさい。<span>Sorry I’m late—because (something happened).</span></div>
-                    </article>
-                    <article class="card" id="n2-bakari-ni" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Only because</span>
-                        <span class="jp-char">～ばかりに (bakari ni)</span>
-                        <p class="meaning">Just because of … (often negative result).</p>
-                        <div class="example">お金がないばかりに、行けなかった。<span>Just because I had no money, I couldn’t go.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Time, Occasion & Manner</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n2-sai" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">At the time / On the occasion</span>
-                        <span class="jp-char">～際 (sai)</span>
-                        <p class="meaning">On the occasion of; when (formal).</p>
-                        <div class="example">ご利用の際は…<span>When using (this service)…</span></div>
-                    </article>
-                    <article class="card" id="n2-toshite" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">As / In the capacity of</span>
-                        <span class="jp-char">～として (toshite)</span>
-                        <p class="meaning">As; in the role of.</p>
-                        <div class="example">学生として参加する。<span>Participate as a student.</span></div>
-                    </article>
-                    <article class="card" id="n2-tabi-ni" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Every time</span>
-                        <span class="jp-char">～たびに (tabi ni)</span>
-                        <p class="meaning">Every time X happens.</p>
-                        <div class="example">会うたびに元気になる。<span>Every time we meet, I cheer up.</span></div>
-                    </article>
-                    <article class="card" id="n2-buri-ni" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">For the first time in …</span>
-                        <span class="jp-char">～ぶりに (buri ni)</span>
-                        <p class="meaning">For the first time in (a period).</p>
-                        <div class="example">10年ぶりに会う。<span>Meet for the first time in 10 years.</span></div>
-                    </article>
-                    <article class="card" id="n2-bakari-da" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Continue to</span>
-                        <span class="jp-char">～ばかりだ (bakari da)</span>
-                        <p class="meaning">Keeps doing; continues to.</p>
-                        <div class="example">物価は上がるばかりだ。<span>Prices just keep rising.</span></div>
-                    </article>
-                    <article class="card" id="n2-bakari-approx" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Approximately (time/amount)</span>
-                        <span class="jp-char">～ばかり (bakari)</span>
-                        <p class="meaning">About; approximately (N2 usage).</p>
-                        <div class="example">1時間ばかり待った。<span>Waited about an hour.</span></div>
-                    </article>
-                    <article class="card" id="n2-ka-nai-ka-no-uchi-ni" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Immediately after</span>
-                        <span class="jp-char">～か～ないかのうちに (ka ~ nai ka no uchi ni)</span>
-                        <p class="meaning">As soon as; barely before/after.</p>
-                        <div class="example">着くか着かないかのうちに雨が降り出した。<span>It started raining as soon as (I) arrived.</span></div>
-                    </article>
-                    <article class="card" id="n2-aruiwa" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Or / Possibly</span>
-                        <span class="jp-char">～あるいは (aruiwa)</span>
-                        <p class="meaning">Or; possibly.</p>
-                        <div class="example">バスあるいは電車で行く。<span>Go by bus or train.</span></div>
-                    </article>
-                    <article class="card" id="n2-furi-o-suru" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Act as / Pretend to be</span>
-                        <span class="jp-char">～ふりをする (furi o suru)</span>
-                        <p class="meaning">Pretend; act like.</p>
-                        <div class="example">知っているふりをする。<span>Pretend to know.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Contrast & Unexpected</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n2-dokoro-ka" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Far from …</span>
-                        <span class="jp-char">～どころか (dokoro ka)</span>
-                        <p class="meaning">Far from; let alone.</p>
-                        <div class="example">独りどころか、家族もいる。<span>Far from being alone, I have a family too.</span></div>
-                    </article>
-                    <article class="card" id="n2-chitto-mo" data-color="#D35400" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Not at all</span>
-                        <span class="jp-char">～ちっとも～ない (chitto mo ~ nai)</span>
-                        <p class="meaning">Not at all; not in the least.</p>
-                        <div class="example">ちっとも疲れていない。<span>Not tired at all.</span></div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <!-- N1 -->
-        <div id="n1" class="level-content">
-            <section class="branch-section">
-                <h2 class="branch-header">Emphasis, Assertion & Formality</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n1-zu-wa-irarenai" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Cannot help but…</span>
-                        <span class="jp-char">～ずにはいられない (zu wa irarenai)</span>
-                        <p class="meaning">Cannot help but do; can’t refrain from.</p>
-                        <div class="example">泣かずにはいられなかった。<span>I couldn’t help but cry.</span></div>
-                    </article>
-                    <article class="card" id="n1-beku" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">In order to / For the purpose of</span>
-                        <span class="jp-char">～べく (beku)</span>
-                        <p class="meaning">In order to (formal).</p>
-                        <div class="example">成功すべく努力する。<span>Strive in order to succeed.</span></div>
-                    </article>
-                    <article class="card" id="n1-bekarazu" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Must not</span>
-                        <span class="jp-char">～べからず (bekarazu)</span>
-                        <p class="meaning">Must not; should not.</p>
-                        <div class="example">入るべからず。<span>Must not enter.</span></div>
-                    </article>
-                    <article class="card" id="n1-ba-koso" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Only because</span>
-                        <span class="jp-char">～ばこそ (ba koso)</span>
-                        <p class="meaning">Precisely because.</p>
-                        <div class="example">あなたを愛しているばこそ言うのだ。<span>I say this precisely because I love you.</span></div>
-                    </article>
-                    <article class="card" id="n1-ba-sore-made-da" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">If… then it’s over</span>
-                        <span class="jp-char">～ばそれまでだ / ～たらそれまでだ</span>
-                        <p class="meaning">If X happens, that’s the end of it.</p>
-                        <div class="example">金がなくなればそれまでだ。<span>If you run out of money, that’s it.</span></div>
-                    </article>
-                    <article class="card" id="n1-naku-shite-wa" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Only then / As long as</span>
-                        <span class="jp-char">～なくしては (naku shite wa)</span>
-                        <p class="meaning">Without; if not for.</p>
-                        <div class="example">努力なくしては成功しない。<span>Without effort, you won’t succeed.</span></div>
-                    </article>
-                    <article class="card" id="n1-akumade-mo" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">To the end; absolutely</span>
-                        <span class="jp-char">～あくまでも (akumade mo)</span>
-                        <p class="meaning">To the end; persistently.</p>
-                        <div class="example">あくまでも自分の意見を通す。<span>Stick to your opinion to the end.</span></div>
-                    </article>
-                    <article class="card" id="n1-aete" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Dare to; deliberately</span>
-                        <span class="jp-char">あえて (aete)</span>
-                        <p class="meaning">Dare to; deliberately.</p>
-                        <div class="example">あえて危険をおかす。<span>Deliberately take a risk.</span></div>
-                    </article>
-                    <article class="card" id="n1-arakajime" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">In advance; beforehand</span>
-                        <span class="jp-char">あらかじめ (arakajime)</span>
-                        <p class="meaning">In advance.</p>
-                        <div class="example">あらかじめ準備する。<span>Prepare in advance.</span></div>
-                    </article>
-                    <article class="card" id="n1-an-no-jou" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Just as one thought</span>
-                        <span class="jp-char">あんの定 (an no jou)</span>
-                        <p class="meaning">Just as expected; sure enough.</p>
-                        <div class="example">あんの定、雨だった。<span>Just as I thought, it rained.</span></div>
-                    </article>
-                    <article class="card" id="n1-atte-no" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Which can exist only due to</span>
-                        <span class="jp-char">～あっての (atte no)</span>
-                        <p class="meaning">Exists only thanks to.</p>
-                        <div class="example">あなたがあっての私だ。<span>I exist only because of you.</span></div>
-                    </article>
-                    <article class="card" id="n1-dani" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Even; not even</span>
-                        <span class="jp-char">～だに (dani)</span>
-                        <p class="meaning">Even; not even.</p>
-                        <div class="example">夢にだに思わなかった。<span>Didn’t even dream of it.</span></div>
-                    </article>
-                </div>
-            </section>
-            <section class="branch-section">
-                <h2 class="branch-header">Concessive & Extreme</h2>
-                <div class="cards-grid">
-                    <article class="card" id="n1-wa-oroka" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Let alone / Not to mention</span>
-                        <span class="jp-char">～はおろか (wa oroka)</span>
-                        <p class="meaning">Let alone; not to mention.</p>
-                        <div class="example">漢字はおろか、ひらがなも読めない。<span>Can’t read hiragana, let alone kanji.</span></div>
-                    </article>
-                    <article class="card" id="n1-ni-chigainai" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Must be; no doubt</span>
-                        <span class="jp-char">～に違いない (ni chigainai)</span>
-                        <p class="meaning">Must be; surely.</p>
-                        <div class="example">彼は幸せに違いない。<span>He must be happy.</span></div>
-                    </article>
-                    <article class="card" id="n1-ni-taenai" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Unbearable / Unworthy of</span>
-                        <span class="jp-char">～にたえない (ni taenai)</span>
-                        <p class="meaning">Unbearable; not worth watching/reading.</p>
-                        <div class="example">見るにたえない。<span>Unbearable to watch.</span></div>
-                    </article>
-                    <article class="card" id="n1-te-kara-denai-to" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Unless / Only after</span>
-                        <span class="jp-char">～てからでないと (te kara denai to)</span>
-                        <p class="meaning">Cannot do Y until X is done.</p>
-                        <div class="example">よく勉強してからでないと合格できない。<span>Can’t pass unless you study hard.</span></div>
-                    </article>
-                    <article class="card" id="n1-gatera" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">While; at the same time</span>
-                        <span class="jp-char">～がてら (gatera)</span>
-                        <p class="meaning">While doing X, also do Y.</p>
-                        <div class="example">散歩がてら、買い物をする。<span>Go shopping while taking a walk.</span></div>
-                    </article>
-                    <article class="card" id="n1-buru" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Act as / Pretend to be</span>
-                        <span class="jp-char">～ぶる (buru)</span>
-                        <p class="meaning">Act like; pretend to be.</p>
-                        <div class="example">偉ぶる。<span>Act important.</span></div>
-                    </article>
-                    <article class="card" id="n1-biru" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Seeming / -like</span>
-                        <span class="jp-char">～びる (biru)</span>
-                        <p class="meaning">Seem to be; appear (suffix).</p>
-                        <div class="example">大人びる。<span>Act grown-up.</span></div>
-                    </article>
-                    <article class="card" id="n1-buri" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Manner / Way</span>
-                        <span class="jp-char">～ぶり (buri)</span>
-                        <p class="meaning">Manner; way of doing.</p>
-                        <div class="example">話しぶり。<span>Way of speaking.</span></div>
-                    </article>
-                    <article class="card" id="n1-beku-shite" data-color="#C0392B" onclick="toggleCheck(this)">
-                        <div class="card-checkbox"></div>
-                        <span class="grammar-point">Bound to happen</span>
-                        <span class="jp-char">～べくして (beku shite)</span>
-                        <p class="meaning">As is bound to; naturally.</p>
-                        <div class="example">失敗すべくして失敗した。<span>He failed as was bound to happen.</span></div>
-                    </article>
-                </div>
-            </section>
-        </div>
-
+        <!-- Content will be injected here via JS -->
+        <div id="content-area"></div>
     </main>
 
     <footer>
@@ -1575,7 +338,267 @@
         // --- 1. Dynamic Year ---
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // --- 2. Color Interpolation Helper ---
+        // --- 2. Grammar Data (JSON Structure) ---
+        const grammarData = {
+            "n5": {
+                "color": "#27AE60",
+                "sections": [
+                    {
+                        "title": "Particles — Multiple Uses",
+                        "cards": [
+                            { "id": "n5-wa-topic", "point": "Topic Marker", "jp": "は (wa)", "meaning": "Marks the topic; “as for…”", "example": "わたしは学生です。<span>I am a student.</span>", "refs": ["n5-wa-contrast"] },
+                            { "id": "n5-wa-contrast", "point": "Contrast Marker", "jp": "は (wa)", "meaning": "Implies contrast with other options.", "example": "肉は食べますが、魚は食べません。<span>I eat meat, but I don’t eat fish.</span>", "refs": ["n5-wa-topic"] },
+                            { "id": "n5-ga-subject", "point": "Subject Marker", "jp": "が (ga)", "meaning": "Marks the subject (focus/emphasis).", "example": "これが本です。<span>This is the book (the one that is).</span>", "refs": ["n5-ga-but"] },
+                            { "id": "n5-ga-but", "point": "But / However", "jp": "が (ga)", "meaning": "Connects clauses with contrast (formal).", "example": "すみませんが、行けません。<span>Sorry, but I can’t go.</span>", "refs": ["n5-ga-subject"] },
+                            { "id": "n5-o-obj", "point": "Object Marker", "jp": "を (o)", "meaning": "Marks the object of an action.", "example": "ご飯を食べる。<span>Eat a meal.</span>" },
+                            { "id": "n5-ni-dir", "point": "Direction / Destination", "jp": "に (ni)", "meaning": "To; towards (destination).", "example": "日本に行く。<span>Go to Japan.</span>", "refs": ["n5-ni-time", "n5-ni-exist"] },
+                            { "id": "n5-ni-time", "point": "Time (specific)", "jp": "に (ni)", "meaning": "At a specific time.", "example": "7時に起きる。<span>Wake up at 7.</span>", "refs": ["n5-ni-dir"] },
+                            { "id": "n5-ni-exist", "point": "Existence (animate)", "jp": "に (ni) + いる", "meaning": "Indicates location of animate existence.", "example": "庭に猫がいる。<span>There is a cat in the garden.</span>", "refs": ["n5-ga-aru"] },
+                            { "id": "n5-ni-indirect", "point": "Indirect Object (Receiver)", "jp": "に (ni)", "meaning": "Marks the recipient in giving/teaching verbs.", "example": "友達に本をあげる。<span>Give a book to a friend.</span>", "refs": ["n5-ni-dir"] },
+                            { "id": "n5-de-place", "point": "Place of Action", "jp": "で (de)", "meaning": "Where an action takes place (at/in).", "example": "図書館で勉強する。<span>Study at the library.</span>", "refs": ["n5-de-means", "n5-de-cause"] },
+                            { "id": "n5-de-means", "point": "Means / Method", "jp": "で (de)", "meaning": "By means of; with; using.", "example": "日本語で書く。<span>Write in Japanese.</span>", "refs": ["n5-de-place"] },
+                            { "id": "n5-de-total", "point": "Total Amount / Time Limit", "jp": "で (de)", "meaning": "In (total amount/time); within.", "example": "全部で1000円です。<span>It’s 1000 yen in total.</span>", "refs": ["n5-de-cause"] },
+                            { "id": "n5-de-cause", "point": "Reason / Cause", "jp": "で (de)", "meaning": "Because of (cause/reason).", "example": "病気で休む。<span>Rest because of illness.</span>", "refs": ["n5-node"] },
+                            { "id": "n5-no-possessive", "point": "Possessive / Modifier", "jp": "の (no)", "meaning": "'s; connects nouns.", "example": "私の本。<span>My book.</span>", "refs": ["n5-no-nominalizer"] },
+                            { "id": "n5-no-nominalizer", "point": "Verb Nominalizer", "jp": "の (no)", "meaning": "Turns a clause/verb into a noun.", "example": "走るのが好き。<span>I like running.</span>", "refs": ["n5-no-possessive"] },
+                            { "id": "n5-ka-question", "point": "Question Particle", "jp": "か (ka)", "meaning": "Makes a sentence a question.", "example": "行きますか。<span>Will you go?</span>", "refs": ["n5-ka-or"] },
+                            { "id": "n5-ka-or", "point": "Or (Choice)", "jp": "か (ka)", "meaning": "Or; indicates a choice or uncertainty.", "example": "コーヒーか紅茶。<span>Coffee or tea.</span>", "refs": ["n5-ka-question"] },
+                            { "id": "n5-kara-from", "point": "From (Origin)", "jp": "から (kara)", "meaning": "Starting point/origin.", "example": "日本から来た。<span>Came from Japan.</span>", "refs": ["n5-kara-because"] },
+                            { "id": "n5-kara-because", "point": "Because (Reason)", "jp": "から (kara)", "meaning": "Because, since (casual).", "example": "寒いから行かない。<span>I won’t go because it’s cold.</span>", "refs": ["n5-kara-from", "n5-node"] },
+                            { "id": "n5-made-until", "point": "Until / To (Extent)", "jp": "まで (made)", "meaning": "Up to (time/place); as far as.", "example": "5時まで待つ。<span>Wait until 5.</span>", "refs": ["n4-made-ni"] },
+                            { "id": "n5-e-direction", "point": "Direction (towards)", "jp": "へ (e)", "meaning": "Towards (directional emphasis).", "example": "学校へ行く。<span>Go towards school.</span>", "refs": ["n5-ni-dir"] },
+                            { "id": "n5-to-and", "point": "And / With", "jp": "と (to)", "meaning": "And (listing nouns); with.", "example": "友達と行く。<span>Go with a friend.</span>" },
+                            { "id": "n5-mo-also", "point": "Also / Too", "jp": "も (mo)", "meaning": "Also; too; as well.", "example": "私も行く。<span>I’m going too.</span>" },
+                            { "id": "n5-ya", "point": "And (partial list)", "jp": "や (ya)", "meaning": "And; non-exhaustive list.", "example": "リンゴやミカン。<span>Apples, oranges, etc.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Copula & Basic Sentences",
+                        "cards": [
+                            { "id": "n5-desu", "point": "To be (polite)", "jp": "です (desu)", "meaning": "Is/are/am (polite copula).", "example": "学生です。<span>I am a student.</span>" },
+                            { "id": "n5-da", "point": "To be (casual)", "jp": "だ (da)", "meaning": "Is/are/am (plain copula).", "example": "雨だ。<span>It’s raining.</span>" },
+                            { "id": "n5-ja-nai", "point": "Is not (polite)", "jp": "じゃない / ではない (ja nai / de wa nai)", "meaning": "Is not (negative of です/だ).", "example": "学生ではない。<span>Not a student.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Verbs (Basic Forms)",
+                        "cards": [
+                            { "id": "n5-masu", "point": "Polite Present/Future", "jp": "～ます (masu)", "meaning": "Will do / do (polite non-past).", "example": "行きます。<span>Will go.</span>" },
+                            { "id": "n5-mashita", "point": "Polite Past", "jp": "～ました (mashita)", "meaning": "Did (polite past).", "example": "行きました。<span>Went.</span>" },
+                            { "id": "n5-masen", "point": "Polite Negative", "jp": "～ません (masen)", "meaning": "Will not do / do not (polite).", "example": "行きません。<span>Won’t go.</span>" },
+                            { "id": "n5-te", "point": "Te-form (connect/do)", "jp": "～て (te)", "meaning": "Connects actions; basis for requests.", "example": "本を読んで、寝る。<span>Read a book and sleep.</span>" },
+                            { "id": "n5-te-kudasai", "point": "Request (Please do)", "jp": "～てください (te kudasai)", "meaning": "Please do …", "example": "座ってください。<span>Please sit down.</span>" },
+                            { "id": "n5-te-iru", "point": "Progressive / State", "jp": "～ている (te iru)", "meaning": "Doing now; resulting state.", "example": "今食べている。<span>Eating now.</span>" },
+                            { "id": "n5-te-kara", "point": "After doing", "jp": "～てから (te kara)", "meaning": "After doing X.", "example": "ご飯を食べてから行く。<span>Go after eating.</span>" },
+                            { "id": "n5-naide-kudasai", "point": "Please don’t", "jp": "～ないでください (naide kudasai)", "meaning": "Please don’t do …", "example": "入らないでください。<span>Please don’t enter.</span>" },
+                            { "id": "n5-te-wa-ikenai", "point": "Must not", "jp": "～てはいけない (te wa ikenai)", "meaning": "Must not do …", "example": "ここに入ってはいけない。<span>Must not enter here.</span>" },
+                            { "id": "n5-tai", "point": "Want to do", "jp": "～たい (tai)", "meaning": "Want to do …", "example": "行きたい。<span>Want to go.</span>" },
+                            { "id": "n5-ta-koto-ga-aru", "point": "Have done before", "jp": "～たことがある (ta koto ga aru)", "meaning": "Have done (experience).", "example": "日本に行ったことがある。<span>Have been to Japan.</span>" },
+                            { "id": "n5-tsumori-da", "point": "Plan / Intend to", "jp": "～つもりだ (tsumori da)", "meaning": "Plan to; intend to.", "example": "行くつもりだ。<span>Plan to go.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Adjectives",
+                        "cards": [
+                            { "id": "n5-i-adj", "point": "i-adj present", "jp": "～い (i)", "meaning": "Is [adj].", "example": "大きい。<span>Big.</span>" },
+                            { "id": "n5-i-adj-neg", "point": "i-adj negative", "jp": "～くない (kunai)", "meaning": "Is not [adj].", "example": "大きくない。<span>Not big.</span>" },
+                            { "id": "n5-i-adj-past", "point": "i-adj past", "jp": "～かった (katta)", "meaning": "Was [adj].", "example": "大きかった。<span>Was big.</span>" },
+                            { "id": "n5-na-adj", "point": "na-adj present", "jp": "～な / だ (na / da)", "meaning": "Is [adj] (na-adj).", "example": "静かだ。<span>Quiet.</span>" },
+                            { "id": "n5-na-adj-neg", "point": "na-adj negative", "jp": "～じゃない (ja nai)", "meaning": "Is not [na-adj].", "example": "静かじゃない。<span>Not quiet.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Connectors & Others",
+                        "cards": [
+                            { "id": "n5-node", "point": "Because (softer)", "jp": "～ので (node)", "meaning": "Because, since (polite).", "example": "寒いので行かない。<span>Since it’s cold, I won’t go.</span>", "refs": ["n5-kara-because"] },
+                            { "id": "n5-kedo", "point": "But / However", "jp": "～けど / けれど (kedo / keredo)", "meaning": "But, however (casual).", "example": "安いけど、古い。<span>It’s cheap but old.</span>", "refs": ["n5-ga-but"] },
+                            { "id": "n5-yori", "point": "Comparison", "jp": "～より～のほうが (yori ~ no hou ga)", "meaning": "More X than Y.", "example": "歩くよりバスのほうが速い。<span>The bus is faster than walking.</span>" },
+                            { "id": "n5-ga-aru", "point": "Existence (inanimate)", "jp": "～がある (ga aru)", "meaning": "There is (a thing).", "example": "庭に木がある。<span>There is a tree in the yard.</span>", "refs": ["n5-ni-exist"] }
+                        ]
+                    }
+                ]
+            },
+            "n4": {
+                "color": "#2980B9",
+                "sections": [
+                    {
+                        "title": "Conditionals & Time",
+                        "cards": [
+                            { "id": "n4-ba", "point": "If (conditional)", "jp": "～ば (ba)", "meaning": "If … then ….", "example": "行けば、会える。<span>If you go, you can meet.</span>" },
+                            { "id": "n4-tara", "point": "When / If (after)", "jp": "～たら (tara)", "meaning": "When/if it happens ….", "example": "家に着いたら連絡する。<span>When I get home, I’ll contact you.</span>" },
+                            { "id": "n4-baai-wa", "point": "In the case that", "jp": "～場合は (baai wa)", "meaning": "In the event/ case that ….", "example": "雨の場合は中止だ。<span>In case of rain, it’s cancelled.</span>" },
+                            { "id": "n4-nara", "point": "If, in case", "jp": "～なら (nara)", "meaning": "If (topic/conditional).", "example": "京都なら、新幹線が便利だ。<span>If it’s Kyoto, the shinkansen is convenient.</span>" },
+                            { "id": "n4-ato-de", "point": "After, later", "jp": "～あとで (ato de)", "meaning": "After; later.", "example": "ご飯のあとで勉強する。<span>Study after the meal.</span>" },
+                            { "id": "n4-made-ni", "point": "By (deadline)", "jp": "～までに (made ni)", "meaning": "By (a certain time).", "example": "5時までに来て。<span>Come by 5 o’clock.</span>", "refs": ["n5-made-until"] },
+                            { "id": "n4-aida", "point": "While / During", "jp": "～間 (aida)", "meaning": "While; during.", "example": "映画の間、寝ていた。<span>Slept during the movie.</span>" },
+                            { "id": "n4-nagara", "point": "While doing", "jp": "～ながら (nagara)", "meaning": "While (doing two things).", "example": "音楽を聴きながら勉強する。<span>Study while listening to music.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Possibility, Ability & Necessity",
+                        "cards": [
+                            { "id": "n4-koto-ga-dekiru", "point": "Can do", "jp": "～ことができる (koto ga dekiru)", "meaning": "Can; be able to.", "example": "日本語を話すことができる。<span>Can speak Japanese.</span>" },
+                            { "id": "n4-nakereba-naranai", "point": "Must do", "jp": "～なければならない (nakereba naranai)", "meaning": "Must; have to.", "example": "勉強しなければならない。<span>Must study.</span>" },
+                            { "id": "n4-nakute-mo-ii", "point": "Don’t have to", "jp": "～なくてもいい (nakute mo ii)", "meaning": "Don’t have to; it’s okay not to.", "example": "行かなくてもいい。<span>You don’t have to go.</span>" },
+                            { "id": "n4-ga-hoshii", "point": "Want (something)", "jp": "～がほしい (ga hoshii)", "meaning": "Want something.", "example": "新しい車がほしい。<span>Want a new car.</span>" },
+                            { "id": "n4-ni-purpose", "point": "Purpose (go to do)", "jp": "～に (ni)", "meaning": "Go/come for the purpose of.", "example": "本を買いに行く。<span>Go to buy a book.</span>", "refs": ["n5-ni-dir"] }
+                        ]
+                    },
+                    {
+                        "title": "Likelihood, Guess & Concession",
+                        "cards": [
+                            { "id": "n4-kamoshirenai", "point": "Might / Maybe", "jp": "～かもしれない (kamoshirenai)", "meaning": "Might be; maybe.", "example": "雨かもしれない。<span>It might rain.</span>" },
+                            { "id": "n4-hazu-da", "point": "Should be / Must be", "jp": "～はずだ (hazu da)", "meaning": "Should be; expected to be.", "example": "彼は来るはずだ。<span>He should come.</span>" },
+                            { "id": "n4-hazu-ga-nai", "point": "Cannot be", "jp": "～はずがない (hazu ga nai)", "meaning": "Cannot be; unlikely.", "example": "そんなはずがない。<span>That can’t be.</span>" },
+                            { "id": "n4-noni", "point": "Although / Even though", "jp": "～のに (noni)", "meaning": "Despite; even though.", "example": "勉強したのに、失敗した。<span>Even though I studied, I failed.</span>", "refs": ["n5-node", "n5-ga-but"] },
+                            { "id": "n4-dake-de", "point": "Just by", "jp": "～だけで (dake de)", "meaning": "Just by doing ….", "example": "これだけでいい。<span>This alone is enough.</span>" },
+                            { "id": "n4-bakari-only", "point": "Only, nothing but", "jp": "～ばかり (bakari)", "meaning": "Only doing X; full of.", "example": "ゲームばかりしている。<span>Doing nothing but playing games.</span>", "refs": ["n4-bakari-approx"] },
+                            { "id": "n4-bakari-approx", "point": "Approximately (time/amount)", "jp": "～ばかり (bakari)", "meaning": "About; approximately.", "example": "1時間ばかり待った。<span>Waited about an hour.</span>", "refs": ["n4-bakari-only"] },
+                            { "id": "n4-mitai", "point": "Like / Similar", "jp": "～みたい (mitai)", "meaning": "Like; seems like (casual).", "example": "猫みたい。<span>Like a cat.</span>" },
+                            { "id": "n4-no-you", "point": "Like / Similar (formal)", "jp": "～のように / ～のような (no you ni / no you na)", "meaning": "Like; as if.", "example": "子どものようだ。<span>Like a child.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Actions & Changes",
+                        "cards": [
+                            { "id": "n4-te-miru", "point": "Try doing", "jp": "～てみる (te miru)", "meaning": "Try doing and see.", "example": "日本の映画を見てみる。<span>Try watching a Japanese movie.</span>" },
+                            { "id": "n4-te-oku", "point": "Do in advance", "jp": "～ておく (te oku)", "meaning": "Do something for later.", "example": "予約しておく。<span>Make a reservation in advance.</span>" },
+                            { "id": "n4-hajimeru", "point": "Start to", "jp": "～はじめる (hajimeru)", "meaning": "Begin to ….", "example": "雨が降り始めた。<span>It started to rain.</span>" },
+                            { "id": "n4-nikui", "point": "Difficult to", "jp": "～にくい (nikui)", "meaning": "Hard to ….", "example": "食べにくい。<span>Hard to eat.</span>" },
+                            { "id": "n4-naide", "point": "Without doing", "jp": "～ないで (naide)", "meaning": "Without doing ….", "example": "朝ご飯を食べないで学校へ行く。<span>Go to school without eating breakfast.</span>" },
+                            { "id": "n4-koto-ni-suru", "point": "Decide to", "jp": "～ことにする (koto ni suru)", "meaning": "Decide to ….", "example": "毎日走ることにする。<span>Decide to run every day.</span>" },
+                            { "id": "n4-koto-ni-naru", "point": "It has been decided", "jp": "～ことになる (koto ni naru)", "meaning": "It’s been decided that ….", "example": "来月、東京へ転勤することになった。<span>It’s been decided that I’ll transfer to Tokyo next month.</span>" }
+                        ]
+                    }
+                ]
+            },
+            "n3": {
+                "color": "#8E44AD",
+                "sections": [
+                    {
+                        "title": "Conditionals & Extent",
+                        "cards": [
+                            { "id": "n3-ba-hodo", "point": "The more… the more…", "jp": "～ば～ほど (ba ~ hodo)", "meaning": "The more X, the more Y.", "example": "練習すればするほど上手になる。<span>The more you practice, the better you get.</span>" },
+                            { "id": "n3-ba-ii", "point": "Should do", "jp": "～ばいい (ba ii)", "meaning": "You should just do ….", "example": "分からない時、人に聞けばいい。<span>If you don’t understand, you should just ask someone.</span>" },
+                            { "id": "n3-ba-yokatta", "point": "Should have done", "jp": "～ばよかった (ba yokatta)", "meaning": "It would have been better if ….", "example": "もっと早く行けばよかった。<span>I should have gone earlier.</span>" },
+                            { "id": "n3-hodo", "point": "To the extent that", "jp": "～ほど (hodo)", "meaning": "To the extent that; so much that.", "example": "驚くほど速い。<span>Surprisingly fast.</span>" },
+                            { "id": "n3-hodo-nai", "point": "Not as … as", "jp": "～ほど～ない (hodo ~ nai)", "meaning": "Not as X as Y.", "example": "去年ほど寒くない。<span>Not as cold as last year.</span>" },
+                            { "id": "n3-temo", "point": "Even if / No matter how", "jp": "～ても (temo)", "meaning": "Even if …; no matter ….", "example": "雨が降っても行く。<span>Even if it rains, I’ll go.</span>" },
+                            { "id": "n3-donna-ni-temo", "point": "No matter how much", "jp": "～どんなに～ても (donna ni ~ temo)", "meaning": "No matter how ….", "example": "どんなに忙しくても電話する。<span>No matter how busy I am, I’ll call.</span>" },
+                            { "id": "n3-bakari-de-naku", "point": "Not only… but also", "jp": "～ばかりでなく (bakari de naku)", "meaning": "Not only … but also ….", "example": "肉ばかりでなく、野菜も食べる。<span>Not only meat, but also vegetables.</span>", "refs": ["n4-bakari-only"] },
+                            { "id": "n3-ippou-de", "point": "On one hand… on the other", "jp": "～一方で (ippou de)", "meaning": "On the other hand.", "example": "一方で、賛成の人もいる。<span>On the other hand, there are people who agree.</span>", "refs": ["n3-ippou-da"] },
+                            { "id": "n3-ippou-da", "point": "More and more", "jp": "～一方だ (ippou da)", "meaning": "Continues to ….", "example": "問題は複雑になる一方だ。<span>Problems are getting more and more complex.</span>", "refs": ["n3-ippou-de"] }
+                        ]
+                    },
+                    {
+                        "title": "Advice, Tendency & Attitude",
+                        "cards": [
+                            { "id": "n3-beki", "point": "Should do", "jp": "～べき (beki)", "meaning": "Should do; ought to.", "example": "もっと勉強すべきだ。<span>You should study more.</span>" },
+                            { "id": "n3-beki-dewa-nai", "point": "Should not", "jp": "～べきではない (beki dewa nai)", "meaning": "Should not do.", "example": "嘘をつくべきではない。<span>You should not lie.</span>" },
+                            { "id": "n3-koto-da", "point": "Should (advice)", "jp": "～ことだ (koto da)", "meaning": "You should do ….", "example": "健康のために寝ることだ。<span>You should sleep for your health.</span>" },
+                            { "id": "n3-gachi", "point": "Tend to", "jp": "～がち (gachi)", "meaning": "Tends to be/do (often negative).", "example": "遅れがちだ。<span>Tends to be late.</span>" },
+                            { "id": "n3-gatai", "point": "Hard to", "jp": "～がたい (gatai)", "meaning": "Hard to (emotionally).", "example": "信じがたい。<span>Hard to believe.</span>" },
+                            { "id": "n3-kuse-ni", "point": "Even though / Despite", "jp": "～くせに (kuse ni)", "meaning": "Even though; despite (blaming).", "example": "知っているくせに教えない。<span>Even though you know, you won’t teach me.</span>" },
+                            { "id": "n3-mama", "point": "Just as is", "jp": "～まま (mama)", "meaning": "Leave in a state; as it is.", "example": "眼鏡をかけたまま寝る。<span>Sleep with glasses on.</span>" },
+                            { "id": "n3-maru-de", "point": "As if", "jp": "～まるで～ようだ (maru de ~ you da)", "meaning": "Just as if; like.", "example": "まるで夢のようだ。<span>It’s just like a dream.</span>" },
+                            { "id": "n3-kawari-ni", "point": "Instead of", "jp": "～代わりに (kawari ni)", "meaning": "Instead of.", "example": "私の代わりに行く。<span>Go in my place.</span>" },
+                            { "id": "n3-nagara-mo", "point": "While / Although", "jp": "～ながらも (nagara mo)", "meaning": "While/although ….", "example": "貧乏ながらも幸せだ。<span>While poor, (I’m) happy.</span>", "refs": ["n4-nagara"] },
+                            { "id": "n3-furi-o-suru", "point": "Pretend", "jp": "～ふりをする (furi o suru)", "meaning": "Pretend to be/do.", "example": "知らないふりをする。<span>Pretend not to know.</span>" },
+                            { "id": "n3-muki", "point": "Suitable for", "jp": "～向き (muki)", "meaning": "Suitable for.", "example": "初心者向き。<span>Suitable for beginners.</span>" },
+                            { "id": "n3-muke", "point": "Intended for", "jp": "～向け (muke)", "meaning": "Intended for; aimed at.", "example": "子供向けの番組。<span>A program aimed at children.</span>" },
+                            { "id": "n3-darake", "point": "Full of / All over", "jp": "～だらけ (darake)", "meaning": "Full of (often negative).", "example": "間違いだらけ。<span>Full of mistakes.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Completion & Emphasis",
+                        "cards": [
+                            { "id": "n3-kiru", "point": "Finish completely", "jp": "～切る (kiru)", "meaning": "Do something completely.", "example": "読み切る。<span>Finish reading completely.</span>" },
+                            { "id": "n3-kirenai", "point": "Can’t finish", "jp": "～切れない (kirenai)", "meaning": "Can’t finish; too much.", "example": "食べきれない。<span>Can’t finish eating.</span>" },
+                            { "id": "n3-kiri", "point": "Only just", "jp": "～きり (kiri)", "meaning": "Only; just (and nothing since).", "example": "一度きり会わない。<span>Meet only once.</span>", "refs": ["n3-kiru"] },
+                            { "id": "n3-metta-ni", "point": "Hardly ever", "jp": "～めったに～ない (metta ni ~ nai)", "meaning": "Hardly ever; rarely.", "example": "めったに行かない。<span>Hardly ever go.</span>" },
+                            { "id": "n3-kesshite", "point": "Never / By no means", "jp": "～決して～ない (kesshite ~ nai)", "meaning": "Never; by no means.", "example": "決して忘れない。<span>I will never forget.</span>" },
+                            { "id": "n3-betsu-ni", "point": "Not really", "jp": "～べつに～ない (betsu ni ~ nai)", "meaning": "Not particularly; not really.", "example": "別に好きじゃない。<span>Not particularly fond.</span>" }
+                        ]
+                    }
+                ]
+            },
+            "n2": {
+                "color": "#D35400",
+                "sections": [
+                    {
+                        "title": "Reason, Cause & Emphasis",
+                        "cards": [
+                            { "id": "n2-wake-da", "point": "No wonder / That explains", "jp": "～わけだ (wake da)", "meaning": "That explains why; logically it follows.", "example": "彼は今パリにいるわけだ。<span>So that explains why he is in Paris now.</span>" },
+                            { "id": "n2-wake-ga-nai", "point": "Unreasonable that / wonder", "jp": "～わけがない (wake ga nai)", "meaning": "No way; cannot be.", "example": "彼が嘘をつくわけがない。<span>There is no way he would lie.</span>" },
+                            { "id": "n2-wake-dewa-nai", "point": "Not the case that", "jp": "～わけではない (wake dewa nai)", "meaning": "Not necessarily; not entirely the case.", "example": "反対というわけではない。<span>I’m not necessarily opposed.</span>" },
+                            { "id": "n2-ijou", "point": "Because (since)", "jp": "～以上 (ijou)", "meaning": "Since; now that.", "example": "約束した以上、守るべきだ。<span>Since you promised, you should keep it.</span>" },
+                            { "id": "n2-dake-atte", "point": "Precisely because", "jp": "～だけあって (dake atte)", "meaning": "As expected of; because it is ….", "example": "彼女はプロだけあって上手だ。<span>She is good, as expected of a pro.</span>" },
+                            { "id": "n2-mono-dakara", "point": "Due to / Because (excuse)", "jp": "～ものだから (mono dakara)", "meaning": "Because; giving a reason/excuse.", "example": "遅れたものだから、ごめんなさい。<span>Sorry I’m late—because (something happened).</span>" },
+                            { "id": "n2-bakari-ni", "point": "Only because", "jp": "～ばかりに (bakari ni)", "meaning": "Just because of … (often negative result).", "example": "お金がないばかりに、行けなかった。<span>Just because I had no money, I couldn’t go.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Time, Occasion & Manner",
+                        "cards": [
+                            { "id": "n2-sai", "point": "At the time / On the occasion", "jp": "～際 (sai)", "meaning": "On the occasion of; when (formal).", "example": "ご利用の際は…<span>When using (this service)…</span>" },
+                            { "id": "n2-toshite", "point": "As / In the capacity of", "jp": "～として (toshite)", "meaning": "As; in the role of.", "example": "学生として参加する。<span>Participate as a student.</span>" },
+                            { "id": "n2-tabi-ni", "point": "Every time", "jp": "～たびに (tabi ni)", "meaning": "Every time X happens.", "example": "会うたびに元気になる。<span>Every time we meet, I cheer up.</span>" },
+                            { "id": "n2-buri-ni", "point": "For the first time in …", "jp": "～ぶりに (buri ni)", "meaning": "For the first time in (a period).", "example": "10年ぶりに会う。<span>Meet for the first time in 10 years.</span>" },
+                            { "id": "n2-bakari-da", "point": "Continue to", "jp": "～ばかりだ (bakari da)", "meaning": "Keeps doing; continues to.", "example": "物価は上がるばかりだ。<span>Prices just keep rising.</span>", "refs": ["n3-bakari-de-naku", "n2-bakari-ni"] },
+                            { "id": "n2-bakari-approx", "point": "Approximately (time/amount)", "jp": "～ばかり (bakari)", "meaning": "About; approximately (N2 usage).", "example": "1時間ばかり待った。<span>Waited about an hour.</span>", "refs": ["n4-bakari-approx"] },
+                            { "id": "n2-ka-nai-ka-no-uchi-ni", "point": "Immediately after", "jp": "～か～ないかのうちに (ka ~ nai ka no uchi ni)", "meaning": "As soon as; barely before/after.", "example": "着くか着かないかのうちに雨が降り出した。<span>It started raining as soon as (I) arrived.</span>" },
+                            { "id": "n2-aruiwa", "point": "Or / Possibly", "jp": "～あるいは (aruiwa)", "meaning": "Or; possibly.", "example": "バスあるいは電車で行く。<span>Go by bus or train.</span>" },
+                            { "id": "n2-furi-o-suru", "point": "Act as / Pretend to be", "jp": "～ふりをする (furi o suru)", "meaning": "Pretend; act like.", "example": "知っているふりをする。<span>Pretend to know.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Contrast & Unexpected",
+                        "cards": [
+                            { "id": "n2-dokoro-ka", "point": "Far from …", "jp": "～どころか (dokoro ka)", "meaning": "Far from; let alone.", "example": "独りどころか、家族もいる。<span>Far from being alone, I have a family too.</span>" },
+                            { "id": "n2-chitto-mo", "point": "Not at all", "jp": "～ちっとも～ない (chitto mo ~ nai)", "meaning": "Not at all; not in the least.", "example": "ちっとも疲れていない。<span>Not tired at all.</span>" }
+                        ]
+                    }
+                ]
+            },
+            "n1": {
+                "color": "#C0392B",
+                "sections": [
+                    {
+                        "title": "Emphasis, Assertion & Formality",
+                        "cards": [
+                            { "id": "n1-zu-wa-irarenai", "point": "Cannot help but…", "jp": "～ずにはいられない (zu wa irarenai)", "meaning": "Cannot help but do; can’t refrain from.", "example": "泣かずにはいられなかった。<span>I couldn’t help but cry.</span>" },
+                            { "id": "n1-beku", "point": "In order to / For the purpose of", "jp": "～べく (beku)", "meaning": "In order to (formal).", "example": "成功すべく努力する。<span>Strive in order to succeed.</span>", "refs": ["n1-bekarazu", "n1-beku-shite"] },
+                            { "id": "n1-bekarazu", "point": "Must not", "jp": "～べからず (bekarazu)", "meaning": "Must not; should not.", "example": "入るべからず。<span>Must not enter.</span>" },
+                            { "id": "n1-ba-koso", "point": "Only because", "jp": "～ばこそ (ba koso)", "meaning": "Precisely because.", "example": "あなたを愛しているばこそ言うのだ。<span>I say this precisely because I love you.</span>" },
+                            { "id": "n1-ba-sore-made-da", "point": "If… then it’s over", "jp": "～ばそれまでだ / ～たらそれまでだ", "meaning": "If X happens, that’s the end of it.", "example": "金がなくなればそれまでだ。<span>If you run out of money, that’s it.</span>" },
+                            { "id": "n1-naku-shite-wa", "point": "Only then / As long as", "jp": "～なくしては (naku shite wa)", "meaning": "Without; if not for.", "example": "努力なくしては成功しない。<span>Without effort, you won’t succeed.</span>" },
+                            { "id": "n1-akumade-mo", "point": "To the end; absolutely", "jp": "～あくまでも (akumade mo)", "meaning": "To the end; persistently.", "example": "あくまでも自分の意見を通す。<span>Stick to your opinion to the end.</span>" },
+                            { "id": "n1-aete", "point": "Dare to; deliberately", "jp": "あえて (aete)", "meaning": "Dare to; deliberately.", "example": "あえて危険をおかす。<span>Deliberately take a risk.</span>" },
+                            { "id": "n1-arakajime", "point": "In advance; beforehand", "jp": "あらかじめ (arakajime)", "meaning": "In advance.", "example": "あらかじめ準備する。<span>Prepare in advance.</span>" },
+                            { "id": "n1-an-no-jou", "point": "Just as one thought", "jp": "あんの定 (an no jou)", "meaning": "Just as expected; sure enough.", "example": "あんの定、雨だった。<span>Just as I thought, it rained.</span>" },
+                            { "id": "n1-atte-no", "point": "Which can exist only due to", "jp": "～あっての (atte no)", "meaning": "Exists only thanks to.", "example": "あなたがあっての私だ。<span>I exist only because of you.</span>" },
+                            { "id": "n1-dani", "point": "Even; not even", "jp": "～だに (dani)", "meaning": "Even; not even.", "example": "夢にだに思わなかった。<span>Didn’t even dream of it.</span>" }
+                        ]
+                    },
+                    {
+                        "title": "Concessive & Extreme",
+                        "cards": [
+                            { "id": "n1-wa-oroka", "point": "Let alone / Not to mention", "jp": "～はおろか (wa oroka)", "meaning": "Let alone; not to mention.", "example": "漢字はおろか、ひらがなも読めない。<span>Can’t read hiragana, let alone kanji.</span>" },
+                            { "id": "n1-ni-chigainai", "point": "Must be; no doubt", "jp": "～に違いない (ni chigainai)", "meaning": "Must be; surely.", "example": "彼は幸せに違いない。<span>He must be happy.</span>" },
+                            { "id": "n1-ni-taenai", "point": "Unbearable / Unworthy of", "jp": "～にたえない (ni taenai)", "meaning": "Unbearable; not worth watching/reading.", "example": "見るにたえない。<span>Unbearable to watch.</span>" },
+                            { "id": "n1-te-kara-denai-to", "point": "Unless / Only after", "jp": "～てからでないと (te kara denai to)", "meaning": "Cannot do Y until X is done.", "example": "よく勉強してからでないと合格できない。<span>Can’t pass unless you study hard.</span>" },
+                            { "id": "n1-gatera", "point": "While; at the same time", "jp": "～がてら (gatera)", "meaning": "While doing X, also do Y.", "example": "散歩がてら、買い物をする。<span>Go shopping while taking a walk.</span>" },
+                            { "id": "n1-buru", "point": "Act as / Pretend to be", "jp": "～ぶる (buru)", "meaning": "Act like; pretend to be.", "example": "偉ぶる。<span>Act important.</span>" },
+                            { "id": "n1-biru", "point": "Seeming / -like", "jp": "～びる (biru)", "meaning": "Seem to be; appear (suffix).", "example": "大人びる。<span>Act grown-up.</span>" },
+                            { "id": "n1-buri", "point": "Manner / Way", "jp": "～ぶり (buri)", "meaning": "Manner; way of doing.", "example": "話しぶり。<span>Way of speaking.</span>" },
+                            { "id": "n1-beku-shite", "point": "Bound to happen", "jp": "～べくして (beku shite)", "meaning": "As is bound to; naturally.", "example": "失敗すべくして失敗した。<span>He failed as was bound to happen.</span>" }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // --- 3. Color Interpolation Helper ---
         function hexToRgb(hex) {
             const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
             return result ? {
@@ -1592,21 +615,18 @@
         function interpolateColor(color1Hex, color2Hex, factor) {
             const c1 = hexToRgb(color1Hex);
             const c2 = hexToRgb(color2Hex);
-            
             if (!c1 || !c2) return color1Hex;
-
             const r = Math.round(c1.r + factor * (c2.r - c1.r));
             const g = Math.round(c1.g + factor * (c2.g - c1.g));
             const b = Math.round(c1.b + factor * (c2.b - c1.b));
-
             return rgbToHex(r, g, b);
         }
 
         const DECAY_COLOR = '#F1C40F'; // Yellow
         const DECAY_DAYS = 30;
 
-        // --- 3. Progress Logic ---
-        const STORAGE_KEY = 'jlpt_tree_progress_v1';
+        // --- 4. Progress Logic ---
+        const STORAGE_KEY = 'jlpt_tree_progress_v2'; // Updated version key
 
         function getProgress() {
             const stored = localStorage.getItem(STORAGE_KEY);
@@ -1618,7 +638,6 @@
         }
 
         function toggleCheck(cardElement) {
-            // Avoid toggling when clicking a ref-link
             if (event.target.closest('.ref-link')) return;
 
             const id = cardElement.id;
@@ -1632,15 +651,13 @@
                 cardElement.style.borderTopColor = defaultColor;
                 cardElement.querySelector('.card-checkbox').style.backgroundColor = '';
             } else {
-                progress[id] = {
-                    checked: true,
-                    timestamp: now
-                };
+                progress[id] = { checked: true, timestamp: now };
                 cardElement.classList.add('checked');
                 applyCardColor(cardElement, progress[id].timestamp, now);
             }
             
             saveProgress(progress);
+            updateCounter(activeLevelId); // Update counter immediately
         }
 
         function applyCardColor(card, timestamp, now) {
@@ -1651,19 +668,15 @@
             if (factor > 1) factor = 1;
 
             const newColor = interpolateColor(defaultColor, DECAY_COLOR, factor);
-            
             card.style.borderTopColor = newColor;
             const checkbox = card.querySelector('.card-checkbox');
-            if(checkbox) {
-                checkbox.style.backgroundColor = newColor;
-            }
+            if(checkbox) checkbox.style.backgroundColor = newColor;
         }
 
         function loadProgress() {
             const progress = getProgress();
             const now = Date.now();
             const cards = document.querySelectorAll('.card');
-
             cards.forEach(card => {
                 const id = card.id;
                 if (progress[id] && progress[id].checked) {
@@ -1676,8 +689,13 @@
             });
         }
 
-        // --- 4. Navigation Logic ---
+        // --- 5. Navigation & Rendering Logic ---
+        let activeLevelId = 'n5';
+
         function switchLevel(levelId, color) {
+            activeLevelId = levelId;
+            
+            // Update Pills
             const pills = document.querySelectorAll('.pill');
             pills.forEach(pill => {
                 pill.classList.remove('active');
@@ -1687,11 +705,96 @@
             activePill.classList.add('active');
             activePill.style.backgroundColor = color;
 
-            const contents = document.querySelectorAll('.level-content');
-            contents.forEach(content => content.classList.remove('active'));
-            document.getElementById(levelId).classList.add('active');
-            
-            setTimeout(loadProgress, 50); 
+            // Render Content
+            renderLevel(levelId);
+        }
+
+        function updateCounter(levelId) {
+            const progress = getProgress();
+            const levelData = grammarData[levelId];
+            let total = 0;
+            let checked = 0;
+
+            levelData.sections.forEach(section => {
+                section.cards.forEach(card => {
+                    total++;
+                    if (progress[card.id] && progress[card.id].checked) {
+                        checked++;
+                    }
+                });
+            });
+
+            const counterEl = document.getElementById('progress-counter');
+            if (total === 0) {
+                counterEl.textContent = "";
+                counterEl.style.opacity = 0;
+            } else {
+                counterEl.textContent = `${checked}/${total} Mastered`;
+                counterEl.style.opacity = 1;
+            }
+        }
+
+        function renderLevel(levelId) {
+            const data = grammarData[levelId];
+            const container = document.getElementById('content-area');
+            container.innerHTML = ''; // Clear current
+
+            // Update counter immediately upon render
+            updateCounter(levelId);
+
+            data.sections.forEach(section => {
+                // Create Section Header
+                const sectionEl = document.createElement('section');
+                sectionEl.className = 'branch-section';
+                
+                const header = document.createElement('h2');
+                header.className = 'branch-header';
+                header.textContent = section.title;
+                sectionEl.appendChild(header);
+
+                // Create Grid
+                const grid = document.createElement('div');
+                grid.className = 'cards-grid';
+
+                section.cards.forEach(cardData => {
+                    const article = document.createElement('article');
+                    article.className = 'card';
+                    article.id = cardData.id;
+                    article.setAttribute('data-color', data.color);
+                    article.onclick = function(e) { toggleCheck(this); };
+
+                    // Inner HTML construction
+                    let refsHtml = '';
+                    if (cardData.refs && cardData.refs.length > 0) {
+                        refsHtml = '<div class="references">';
+                        cardData.refs.forEach(refId => {
+                            // Find ref card title for link text (optional, simpler to just use ID for now or 'See also')
+                            refsHtml += `<a href="#${refId}" class="ref-link" onclick="scrollToCard(event, '${refId}')">See also: ${refId}</a> `;
+                        });
+                        refsHtml += '</div>';
+                    }
+
+                    article.innerHTML = `
+                        <div class="card-checkbox"></div>
+                        <span class="grammar-point">${cardData.point}</span>
+                        <span class="jp-char">${cardData.jp}</span>
+                        <p class="meaning">${cardData.meaning}</p>
+                        <div class="example">${cardData.example}</div>
+                        ${refsHtml}
+                    `;
+
+                    grid.appendChild(article);
+                });
+
+                sectionEl.appendChild(grid);
+                container.appendChild(sectionEl);
+            });
+
+            // Load state for new DOM elements
+            // Use requestAnimationFrame to ensure DOM is ready before applying styles
+            requestAnimationFrame(() => {
+                loadProgress();
+            });
         }
 
         function scrollToCard(e, targetId) {
@@ -1718,9 +821,9 @@
             }
         }
 
-        // Initialize
+        // --- 6. Initialization ---
         window.addEventListener('DOMContentLoaded', () => {
-            loadProgress();
+            renderLevel('n5'); // Render default level
         });
 
     </script>
