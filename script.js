@@ -1,4 +1,4 @@
-/ --- 1. Dynamic Year ---
+// --- 1. Dynamic Year ---
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // --- 2. Color Interpolation Helper ---
@@ -33,7 +33,7 @@ let grammarData = {};
 let activeLevelId = 'n5';
 
 // --- 4. Progress Logic ---
-const STORAGE_KEY = 'jlpt_tree_progress_v3'; // Updated version key
+const STORAGE_KEY = 'jlpt_tree_progress_v3'; 
 
 function getProgress() {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -97,9 +97,12 @@ function loadProgress() {
 }
 
 // --- 5. Navigation & Rendering Logic ---
+
+// THIS FUNCTION WAS MISSING - CAUSING THE ERROR
 function switchLevel(levelId, color) {
     activeLevelId = levelId;
     
+    // Update Pills
     const pills = document.querySelectorAll('.pill');
     pills.forEach(pill => {
         pill.classList.remove('active');
@@ -109,13 +112,14 @@ function switchLevel(levelId, color) {
     activePill.classList.add('active');
     activePill.style.backgroundColor = color;
 
+    // Render Content
     renderLevel(levelId);
 }
 
 function updateCounter(levelId) {
     const progress = getProgress();
     const levelData = grammarData[levelId];
-    if (!levelData) return; // Guard clause if data not loaded yet
+    if (!levelData) return; 
 
     let total = 0;
     let checked = 0;
@@ -227,20 +231,16 @@ function scrollToCard(e, targetId) {
 // --- 6. Data Fetching ---
 async function initData() {
     const container = document.getElementById('content-area');
-    // Show loading indicator
     container.innerHTML = '<div style="text-align:center; padding: 40px; color: var(--text-muted);">Loading Grammar Data...</div>';
 
     try {
-        // Fetch the JSON file
-        const response = await fetch('jlpt-data.json');
+        const response = await fetch('grammar-data.json');
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         
         const data = await response.json();
-        
-        // Assign to global variable
         grammarData = data;
         
         // Initial Render
@@ -254,7 +254,6 @@ async function initData() {
                 <p>${error.message}</p>
                 <p style="font-size:0.85rem; margin-top:10px; color:#7f8c8d;">
                     Note: You must run this on a local server (like VS Code Live Server) to load JSON files.
-                    Double-clicking the HTML file will likely result in a CORS error.
                 </p>
             </div>
         `;
